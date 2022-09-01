@@ -314,17 +314,18 @@ bool minBool = true;
 
 while (minBool)
 {
+    
     Console.WriteLine("Gissa ett tal mellan 1 och 100");
     string gissningtext = Console.ReadLine();
     int gissning = Int32.Parse(gissningtext);
     n++;
 
-    if (gissning < hemligtnummer)
+    if (gissning < nummer)
     {
         Console.WriteLine("Det hemliga numret är högre");
         Console.WriteLine($"Du har gissat: {n} gånger\n");
     }
-    else if (gissning > hemligtnummer)
+    else if (gissning > nummer)
     {
         Console.WriteLine("Det hemliga numret är lägre");
         Console.WriteLine($"Du har gissat: {n} gånger\n");
