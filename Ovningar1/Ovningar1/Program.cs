@@ -280,14 +280,26 @@ switch (manad)
 
 //8.Skapa ett program som skriver ut 1 på första raden, 2 på nästa, sedan 4, o.s.v (dubbelt så hög siffra för varje rad).
 //Fortsätt till du skrivit ut 16 rader.
-
 /*
-for (int i=1; i<17;i*=2)
+
+int n = 0;
+for (int i=1; n<16;i*=2)
 {
     Console.WriteLine(i);
-    
+    n++;
+       
 }
 
 */
+
+//9. Skriv ett program som frågar användaren efter ett tal mellan 1 och 100. Programmet ska ha ett hemligt tal lagrat i en variabel. Det ska fortsätta fråga användaren till dess att användaren gissar det hemliga talet. Om man gissade för högt eller för lågt så ska det skrivas ut, så att användaren har en rimlig chans att klara det. Exempel: programmet har det hemliga talet 27. Användaren gissar på 50. Programmet skriver ut att användaren gissade för högt. 
+//Användaren gissar på 20. 
+//Programmet skriver ut att det var för lågt. 
+//Användaren gissar på 27. 
+//Programmet skriver ut att det var rätt och avslutas.
+
+
+
+
 Console.ReadKey();
 
