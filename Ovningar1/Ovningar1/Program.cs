@@ -408,6 +408,17 @@ foreach (char c in charArray)
 
 */
 
+// 14.Be användaren mata in en text. Skriv ut texten med alla vokaler ersatta med *
+Console.WriteLine("Vänligen skriv in en text:\n");
+string inputtext = Console.ReadLine();
+string[] vokaler = new string[8] { "a", "e", "i", "o", "u", "å", "ä", "ö" };
+
+if (Array.Exists(vokaler, x => x == inputtext))
+{
+    Console.WriteLine("Den innehåller vokaler");
+}
+
+
 Console.ReadKey();
 
 // Contains i övningen om vokaler
