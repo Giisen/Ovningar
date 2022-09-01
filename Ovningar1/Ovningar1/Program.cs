@@ -346,7 +346,12 @@ while (minBool)
 // 10.Be användaren mata in en sträng. Skriv ut varje tecken i strängen på en egen rad. Ex: Hej => H e j
 
 Console.WriteLine("Skriv in en sträng ex hej");
+string text = Console.ReadLine();
 
+for(int i=0;i<text.Length;i++)
+{
+    Console.Write(text[i]+" ");
+}
 
 
 Console.ReadKey();
