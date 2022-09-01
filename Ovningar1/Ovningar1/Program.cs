@@ -133,3 +133,22 @@ while (minbool)
         minbool=false;
     }
 }
+
+
+// 6.Skriv ett program som först frågar efter ett tal,
+// sedan frågar efter ett av följande tecken: +, -, *eller /.
+// Därefter ska ytterligare ett tal efterfrågas. Programmet ska fungera som en simpel miniräknare.
+// Om man t.ex matat in först 3, sedan *, och sist 5, så ska programmet skriva ut “3 * 5 = 15”.
+
+Console.WriteLine("skriv in ett tal");
+int tal1;
+var input1 = int.TryParse(Console.ReadLine(), out tal1);
+Console.WriteLine("Vad vill du göra med tal 1? (+ - / eller *?");
+string tecken = Console.ReadLine();
+Console.WriteLine("skriv in ytterligare ett tal");
+int tal2;
+var input2 = int.TryParse(Console.ReadLine(), out tal2);
+
+Console.WriteLine((tal1+tecken+tal2));
+Console.ReadKey();
+
