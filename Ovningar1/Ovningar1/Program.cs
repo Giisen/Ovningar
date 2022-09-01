@@ -372,6 +372,7 @@ Console.WriteLine(minArray[tal]);
 // Fråga sedan efter talen i tur och ordning (“Ange tal 1:” osv).
 // När alla tal är inmatade skriv ut dem i omvänd ordning.
 
+/*
 Console.WriteLine("Hur många tal vill du skriva in?");
 var input = int.TryParse(Console.ReadLine(), out int tal);
 int[] minArray =new int[tal];
@@ -386,6 +387,26 @@ for(int i = minArray.Length-1; i>=0 ; i--)
 {
     Console.Write(minArray[i] + " ");
 }
+
+
+*/
+
+// 13.Be användaren mata in en text. Skriv sedan ut texten baklänges.
+
+/*
+
+Console.WriteLine("Vänligen skriv in en text:\n");
+string inputtext = Console.ReadLine();
+char[] charArray = inputtext.ToCharArray();
+Array.Reverse(charArray);
+
+foreach (char c in charArray)
+{
+    Console.Write(c);
+}
+
+
+*/
 
 Console.ReadKey();
 
