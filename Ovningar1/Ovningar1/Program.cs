@@ -88,7 +88,7 @@ else if (tal>100)
     Console.WriteLine("Ditt tal är mer än 100");
 }
 
-else if(tal<100)
+else if(tal<100)  //Eftersom det är tal så behöver jag inte else if.... skulle kunna göra bara else.
 {
     Console.WriteLine("Ditt tal är mindre än 100");
 }
@@ -108,29 +108,25 @@ Console.ReadKey();
 
 bool minbool =true;
 int n = 0;
+int summa = 0;
 while (minbool)
 {
     Console.WriteLine("Skriv ett tal:");
     int tal;
-    var input = int.TryParse(Console.ReadLine(), out tal);
+    var input = int.TryParse(Console.ReadLine(), out tal); //TryParse spara även värde som true eller false, därför kan vi använda det i vår if-sats, input är true om det är en int annars false
     n++;
-
-    int summa=tal + tal;
-    //if (n <2)
-    //{
-    //    summa = tal;
-    //}
-    //else
-    //{
-    //    summa = tal + tal;
-    //}
-    Console.WriteLine($"Summan av talen är: {summa}");
-    Console.WriteLine($"Antal gånger {n}");
     
+    summa+= tal;
 
-    //if (tal<0)
-    //{
-    //    Console.WriteLine($"Medel är {summa}/{n}");
-    //    minbool = false;
-    //}
+    if (input)
+    {
+        Console.WriteLine($"Summan av talen är: {summa}");
+        Console.WriteLine($"Antal gånger {n}");
+    }
+    else
+    {
+        Console.WriteLine("Du skrev inte in ett nummer");
+        Console.WriteLine($"Medel är: " +  summa/n);
+        break;
+    }
 }
