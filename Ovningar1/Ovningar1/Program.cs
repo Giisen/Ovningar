@@ -106,6 +106,7 @@ Console.ReadKey();
 //innan nästa inmatning efterfrågas. Innan programmet avslutas ska man även skriva ut medelvärde av de inmatade talen.
 //Hint: TryParse()
 
+/*
 bool minbool =true;
 int n = 0;
 int summa = 0;
@@ -114,18 +115,19 @@ while (minbool)
     Console.WriteLine("Skriv ett tal:");
     int tal;
     var input = int.TryParse(Console.ReadLine(), out tal); //TryParse spara även värde som true eller false, därför kan vi använda det i vår if-sats, input är true om det är en int annars false
-    n++;
+    
     
     summa += tal;
 
     if (input)
     {
         Console.WriteLine($"Summan av talen är: {summa}");
+        n++;
         Console.WriteLine($"Antal gånger {n}");
     }
     else
     {
-        n--;
+        
         Console.WriteLine("Du skrev inte in ett nummer");
         Console.WriteLine($"Summan av talen är: {summa}");
         Console.WriteLine($"Antal gånger {n}");
@@ -133,6 +135,8 @@ while (minbool)
         minbool=false;
     }
 }
+*/
+
 
 
 // 6.Skriv ett program som först frågar efter ett tal,
