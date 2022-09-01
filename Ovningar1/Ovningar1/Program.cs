@@ -303,6 +303,7 @@ for (int i=1; n<16;i*=2)
 //Användaren gissar på 27. 
 //Programmet skriver ut att det var rätt och avslutas.
 
+/*
 //int hemligtnummer = 67;
 Random hemligtnummer = new Random();
 int nummer = hemligtnummer.Next(1, 100);
@@ -340,6 +341,11 @@ while (minBool)
     
 }
 
+*/
+
+// 10.Be användaren mata in en sträng. Skriv ut varje tecken i strängen på en egen rad. Ex: Hej => H e j
+
+Console.WriteLine("Skriv in en sträng ex hej");
 
 
 
