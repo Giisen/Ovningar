@@ -358,13 +358,35 @@ for(int i=0;i<text.Length;i++)
 
 // 11. Skapa ett program med en array som innehåller strängarna “noll”, “ett”, “två”, “tre”, “fyra”, “fem”, “sex”, “sju”, “åtta”, “nio”.
 // Be sedan användaren att mata in en siffra. Använd arrayen för att skriva ut siffrans ord. Ex. Inmatning “3” => “tre”.
-
+/*
 string[] minArray = new string[10] {"noll", "ett", "två", "tre", "fyra", "fem", "sex", "sju", "åtta", "nio"};
 
 Console.WriteLine("Vänligen skriv en siffra");
 var input = int.TryParse(Console.ReadLine(), out int tal);
 
 Console.WriteLine(minArray[tal]);
+*/
+
+
+// 12.Fråga användaren hur många tal den vill mata in.
+// Fråga sedan efter talen i tur och ordning (“Ange tal 1:” osv).
+// När alla tal är inmatade skriv ut dem i omvänd ordning.
+
+Console.WriteLine("Hur många tal vill du skriva in?");
+var input = int.TryParse(Console.ReadLine(), out int tal);
+int[] minArray =new int[tal];
+
+for(int i = 0; i < tal; i++)
+{
+    Console.WriteLine($"Ange tal {i}: ");
+    var input2 = int.TryParse(Console.ReadLine(), out int tal2);
+    minArray[i] =tal2;
+}
+for(int i = minArray.Length-1; i>=0 ; i--)
+{
+    Console.Write(minArray[i] + " ");
+}
 
 Console.ReadKey();
 
+// Contains i övningen om vokaler
