@@ -116,7 +116,7 @@ while (minbool)
     var input = int.TryParse(Console.ReadLine(), out tal); //TryParse spara även värde som true eller false, därför kan vi använda det i vår if-sats, input är true om det är en int annars false
     n++;
     
-    summa+= tal;
+    summa += tal;
 
     if (input)
     {
@@ -127,6 +127,6 @@ while (minbool)
     {
         Console.WriteLine("Du skrev inte in ett nummer");
         Console.WriteLine($"Medel är: " +  summa/n);
-        break;
+        minbool=false;
     }
 }
