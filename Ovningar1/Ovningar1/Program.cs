@@ -144,6 +144,7 @@ while (minbool)
 // Därefter ska ytterligare ett tal efterfrågas. Programmet ska fungera som en simpel miniräknare.
 // Om man t.ex matat in först 3, sedan *, och sist 5, så ska programmet skriva ut “3 * 5 = 15”.
 
+/*
 Console.WriteLine("skriv in ett tal");
 //int tal1;
 var input1 = int.TryParse(Console.ReadLine(), out int tal1);
@@ -181,6 +182,99 @@ switch (tecken)
         break;
 
 }
+
+*/
+
+// 7.Skriv ett program som ber användaren skriva in en månad. Programmet ska göra om månaden till månadens siffervärde.
+// T.ex. ska januari bli 1 och december 12. Använd switch. Alternativ: Prova även att lösa uppgiften med array och/eller enum.
+
+Console.WriteLine("skriv in en månad (ex: mars) och få ut numret för månaden.");
+string manadinput = Console.ReadLine();
+string manad = manadinput.ToLower();
+
+
+switch (manad)
+{
+    case "januari":
+        {
+            Console.WriteLine("Månadens nummer är 1");
+        }
+        break;
+
+    case "februari":
+        {
+            Console.WriteLine("Månadens nummer är 2");
+        }
+        break;
+
+    case "mars":
+        {
+            Console.WriteLine("Månadens nummer är 3");
+        }
+        break;
+
+    case "april":
+        {
+            Console.WriteLine("Månadens nummer är 4");
+        }
+        break;
+
+    case "maj":
+        {
+            Console.WriteLine("Månadens nummer är 5");
+        }
+        break;
+
+    case "juni":
+        {
+            Console.WriteLine("Månadens nummer är 6");
+        }
+        break;
+
+    case "juli":
+        {
+            Console.WriteLine("Månadens nummer är 7");
+        }
+        break;
+
+    case "augusti":
+        {
+            Console.WriteLine("Månadens nummer är 8");
+        }
+        break;
+
+    case "september":
+        {
+            Console.WriteLine("Månadens nummer är 9");
+        }
+        break;
+
+    case "oktober":
+        {
+            Console.WriteLine("Månadens nummer är 10");
+        }
+        break;
+
+    case "november":
+        {
+            Console.WriteLine("Månadens nummer är 11");
+        }
+        break;
+
+    case "december":
+        {
+            Console.WriteLine("Månadens nummer är 12");
+        }
+        break;
+
+    default:
+        {
+            Console.WriteLine("Du skrev inte in en månad");
+        }
+        break;
+
+}
+
 
 Console.ReadKey();
 
