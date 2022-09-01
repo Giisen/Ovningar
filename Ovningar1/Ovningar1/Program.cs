@@ -125,8 +125,11 @@ while (minbool)
     }
     else
     {
+        n--;
         Console.WriteLine("Du skrev inte in ett nummer");
-        Console.WriteLine($"Medel är: " +  summa/n);
+        Console.WriteLine($"Summan av talen är: {summa}");
+        Console.WriteLine($"Antal gånger {n}");
+        Console.WriteLine($"Medel är: " +  (summa/n));
         minbool=false;
     }
 }
