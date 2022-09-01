@@ -145,14 +145,42 @@ while (minbool)
 // Om man t.ex matat in först 3, sedan *, och sist 5, så ska programmet skriva ut “3 * 5 = 15”.
 
 Console.WriteLine("skriv in ett tal");
-int tal1;
-var input1 = int.TryParse(Console.ReadLine(), out tal1);
+//int tal1;
+var input1 = int.TryParse(Console.ReadLine(), out int tal1);
 Console.WriteLine("Vad vill du göra med tal 1? (+ - / eller *?");
 string tecken = Console.ReadLine();
 Console.WriteLine("skriv in ytterligare ett tal");
-int tal2;
-var input2 = int.TryParse(Console.ReadLine(), out tal2);
+//int tal2;
+var input2 = int.TryParse(Console.ReadLine(), out int tal2);
+//int summa = (tal1 + tal2);
 
-Console.WriteLine((tal1+tecken+tal2));
+switch (tecken)
+{
+    case "+":
+        {
+            Console.WriteLine("Summan är: " + tal1 + tal2);
+        }
+        break;
+
+    case "-":
+        {
+            Console.WriteLine("Summan är: " + (tal1 - tal2));
+        }
+        break;
+
+    case "/":
+        {
+            Console.WriteLine("Summan är: " + (tal1 / tal2));
+        }
+        break;
+
+    default:
+        {
+            Console.WriteLine("Summan är: " + (tal1 * tal2));
+        }
+        break;
+
+}
+
 Console.ReadKey();
 
