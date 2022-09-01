@@ -345,6 +345,7 @@ while (minBool)
 
 // 10.Be användaren mata in en sträng. Skriv ut varje tecken i strängen på en egen rad. Ex: Hej => H e j
 
+/*
 Console.WriteLine("Skriv in en sträng ex hej");
 string text = Console.ReadLine();
 
@@ -352,7 +353,18 @@ for(int i=0;i<text.Length;i++)
 {
     Console.Write(text[i]+" ");
 }
+*/
 
+
+// 11. Skapa ett program med en array som innehåller strängarna “noll”, “ett”, “två”, “tre”, “fyra”, “fem”, “sex”, “sju”, “åtta”, “nio”.
+// Be sedan användaren att mata in en siffra. Använd arrayen för att skriva ut siffrans ord. Ex. Inmatning “3” => “tre”.
+
+string[] minArray = new string[10] {"noll", "ett", "två", "tre", "fyra", "fem", "sex", "sju", "åtta", "nio"};
+
+Console.WriteLine("Vänligen skriv en siffra");
+var input = int.TryParse(Console.ReadLine(), out int tal);
+
+Console.WriteLine(minArray[tal]);
 
 Console.ReadKey();
 
