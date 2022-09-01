@@ -292,11 +292,52 @@ for (int i=1; n<16;i*=2)
 
 */
 
-//9. Skriv ett program som frågar användaren efter ett tal mellan 1 och 100. Programmet ska ha ett hemligt tal lagrat i en variabel. Det ska fortsätta fråga användaren till dess att användaren gissar det hemliga talet. Om man gissade för högt eller för lågt så ska det skrivas ut, så att användaren har en rimlig chans att klara det. Exempel: programmet har det hemliga talet 27. Användaren gissar på 50. Programmet skriver ut att användaren gissade för högt. 
+//9. Skriv ett program som frågar användaren efter ett tal mellan 1 och 100.
+//Programmet ska ha ett hemligt tal lagrat i en variabel.
+//Det ska fortsätta fråga användaren till dess att användaren gissar det hemliga talet.
+//Om man gissade för högt eller för lågt så ska det skrivas ut, så att användaren har en rimlig chans att klara det.
+//Exempel: programmet har det hemliga talet 27. Användaren gissar på 50.
+//Programmet skriver ut att användaren gissade för högt. 
 //Användaren gissar på 20. 
 //Programmet skriver ut att det var för lågt. 
 //Användaren gissar på 27. 
 //Programmet skriver ut att det var rätt och avslutas.
+
+//int hemligtnummer = 67;
+Random hemligtnummer = new Random();
+int nummer = hemligtnummer.Next(1, 100);
+//Console.WriteLine("Gissa ett tal mellan 1 och 100");
+//string gissningtext = Console.ReadLine();
+//int gissning = Int32.Parse(gissningtext);
+int n = 0;
+bool minBool = true;
+
+while (minBool)
+{
+    Console.WriteLine("Gissa ett tal mellan 1 och 100");
+    string gissningtext = Console.ReadLine();
+    int gissning = Int32.Parse(gissningtext);
+    n++;
+
+    if (gissning < hemligtnummer)
+    {
+        Console.WriteLine("Det hemliga numret är högre");
+        Console.WriteLine($"Du har gissat: {n} gånger\n");
+    }
+    else if (gissning > hemligtnummer)
+    {
+        Console.WriteLine("Det hemliga numret är lägre");
+        Console.WriteLine($"Du har gissat: {n} gånger\n");
+    }
+    else
+    {
+        Console.WriteLine($"Du gissade rätt!!! på {n} gånger");
+        
+        minBool = false;
+    }
+
+    
+}
 
 
 
