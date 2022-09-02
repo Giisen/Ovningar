@@ -411,13 +411,11 @@ foreach (char c in charArray)
 // 14.Be användaren mata in en text. Skriv ut texten med alla vokaler ersatta med *
 Console.WriteLine("Vänligen skriv in en text:\n");
 string inputtext = Console.ReadLine();
-string[] vokaler = new string[8] { "a", "e", "i", "o", "u", "å", "ä", "ö" };
+//var[] vokaler = new var[9] { "a", "e", "i", "o", "u", "y","å", "ä", "ö" };
+string outputtext = inputtext.Replace("a", "*").Replace("e", "*").Replace("i", "*").Replace("o", "*").Replace("u", "*").Replace("y", "*").
+    Replace("å", "*").Replace("ä", "*").Replace("ä", "*");
 
-if (Array.Exists(vokaler, x => x == inputtext))
-{
-    Console.WriteLine("Den innehåller vokaler");
-}
-
+Console.WriteLine(outputtext);
 
 Console.ReadKey();
 
