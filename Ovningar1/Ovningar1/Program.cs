@@ -451,3 +451,78 @@ else
 // 16. Gör om uppgift 6 så man kan mata in allt på en rad (första talet, operator, andra talet).
 // Ignorera inmatade mellanslag i strängen. Om man t.ex. matar in strängen “34 - 14”, så ska programmet skriva ut “= 20”.
 
+
+using System.Text.RegularExpressions;
+
+Console.WriteLine("skriv in en uppgift du vill ha uträknad (ex 4*3 eller 32+98)");
+string input = Console.ReadLine();
+string outputtext = input.Replace(" ", "");
+
+
+
+for (int i = 0; outputtext != "+"|| "-"||"*"||"/"; i++)
+{
+    Console.WriteLine(outputtext);
+}
+
+string[] split1 = outputtext.Split(new char[] { '+', '-', '*', '/' });
+string tal1String = string.Concat(split1);
+
+int tal1 = 0;
+int.TryParse(tal1String, out tal1);
+
+
+
+Console.WriteLine(tal1);
+
+
+
+//string[] minArray = Regex.Split(input," ");
+
+//Console.WriteLine(minArray[0]);
+//Console.WriteLine(minArray[1]);
+
+
+//foreach (string i in minArray)
+//{
+//    Console.WriteLine(i);
+
+//}
+
+/*
+
+    var input1 = int.TryParse(Console.ReadLine(), out int tal1);
+
+
+var input2 = int.TryParse(Console.ReadLine(), out int tal2);
+
+
+switch (tecken)
+{
+    case "+":
+        {
+            Console.WriteLine("Summan är: " + tal1 + tal2);
+        }
+        break;
+
+    case "-":
+        {
+            Console.WriteLine("Summan är: " + (tal1 - tal2));
+        }
+        break;
+
+    case "/":
+        {
+            Console.WriteLine("Summan är: " + (tal1 / tal2));
+        }
+        break;
+
+    default:
+        {
+            Console.WriteLine("Summan är: " + (tal1 * tal2));
+        }
+        break;
+
+}
+
+*/
