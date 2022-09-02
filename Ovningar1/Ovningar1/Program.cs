@@ -409,6 +409,7 @@ foreach (char c in charArray)
 */
 
 // 14.Be användaren mata in en text. Skriv ut texten med alla vokaler ersatta med *
+/*
 Console.WriteLine("Vänligen skriv in en text:\n");
 string inputtext = Console.ReadLine();
 //var[] vokaler = new var[9] { "a", "e", "i", "o", "u", "y","å", "ä", "ö" };
@@ -418,5 +419,28 @@ string outputtext = inputtext.Replace("a", "*").Replace("e", "*").Replace("i", "
 Console.WriteLine(outputtext);
 
 Console.ReadKey();
+*/
 
-// Contains i övningen om vokaler
+
+//15. Ett palindrom är ett ord som blir samma framlänges som baklänges.
+//Be användaren skriva in ett ord och ange sedan om det är ett palindrom eller inte.
+
+Console.WriteLine("Vänligen skriv in ett ord:");
+string ord = Console.ReadLine();
+
+char[] ordArray = ord.ToCharArray();
+
+Array.Reverse(ordArray);
+
+string ordreverseString = string.Concat(ordArray);
+
+//Console.WriteLine(ordreverseString);
+
+if(ord==ordreverseString)
+{
+    Console.WriteLine("Ordet är ett palindrom!");
+}
+else
+{
+    Console.WriteLine("Ordet är inte ett palindrom!");
+}
