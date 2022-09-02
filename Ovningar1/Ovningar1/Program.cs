@@ -425,14 +425,15 @@ Console.ReadKey();
 //15. Ett palindrom är ett ord som blir samma framlänges som baklänges.
 //Be användaren skriva in ett ord och ange sedan om det är ett palindrom eller inte.
 
+/*
 Console.WriteLine("Vänligen skriv in ett ord:");
 string ord = Console.ReadLine();
 
-char[] ordArray = ord.ToCharArray();
+char[] ordArray = ord.ToCharArray(); // Gör om strängen 'ord' till en array för att kunna vända på bokstäverna i ordet.
 
-Array.Reverse(ordArray);
+Array.Reverse(ordArray); //vänder ordning på arrayen
 
-string ordreverseString = string.Concat(ordArray);
+string ordreverseString = string.Concat(ordArray); // skapar en string av arrayen
 
 //Console.WriteLine(ordreverseString);
 
@@ -444,3 +445,9 @@ else
 {
     Console.WriteLine("Ordet är inte ett palindrom!");
 }
+
+*/
+
+// 16. Gör om uppgift 6 så man kan mata in allt på en rad (första talet, operator, andra talet).
+// Ignorera inmatade mellanslag i strängen. Om man t.ex. matar in strängen “34 - 14”, så ska programmet skriva ut “= 20”.
+
