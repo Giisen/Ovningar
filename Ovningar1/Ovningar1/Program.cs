@@ -452,77 +452,36 @@ else
 // Ignorera inmatade mellanslag i strängen. Om man t.ex. matar in strängen “34 - 14”, så ska programmet skriva ut “= 20”.
 
 
-using System.Text.RegularExpressions;
+//using System.Text.RegularExpressions;
 
-Console.WriteLine("skriv in en uppgift du vill ha uträknad (ex 4*3 eller 32+98)");
-string input = Console.ReadLine();
-string outputtext = input.Replace(" ", "");
+        Console.WriteLine("skriv in en uppgift du vill ha uträknad (ex 4*3 eller 32+98)");
+        string input = Console.ReadLine();
+        string outputtext = input.Replace(" ", ""); //Tar bort alla mellanslag (white space)
 
+        char[] teckenArray = new char[] { '+', '-', '*', '/' };
 
+        string[] tal1string = outputtext.Split(teckenArray); //Splittar outputtext när det förekommer + eller - eller * eller /, till en ny array med två index.
 
-for (int i = 0; outputtext != "+"|| "-"||"*"||"/"; i++)
-{
-    Console.WriteLine(outputtext);
+        int tal1 = int.Parse(tal1string[0]); //Gör om index 0 från string till int
+        //Console.WriteLine(tal1);
+
+        int tal2 = int.Parse(tal1string[1]); //Gör om index 2 från string till int
+        //Console.WriteLine(tal2);
+
+if (outputtext.Contains('+'))
+            {
+            Console.WriteLine("Summan är: "+(tal1 + tal2));
+            }
+        else if (outputtext.Contains('-'))
+        {
+        Console.WriteLine("Summan är: " + (tal1 - tal2));
 }
 
-string[] split1 = outputtext.Split(new char[] { '+', '-', '*', '/' });
-string tal1String = string.Concat(split1);
-
-int tal1 = 0;
-int.TryParse(tal1String, out tal1);
-
-
-
-Console.WriteLine(tal1);
-
-
-
-//string[] minArray = Regex.Split(input," ");
-
-//Console.WriteLine(minArray[0]);
-//Console.WriteLine(minArray[1]);
-
-
-//foreach (string i in minArray)
-//{
-//    Console.WriteLine(i);
-
-//}
-
-/*
-
-    var input1 = int.TryParse(Console.ReadLine(), out int tal1);
-
-
-var input2 = int.TryParse(Console.ReadLine(), out int tal2);
-
-
-switch (tecken)
-{
-    case "+":
+        else if(outputtext.Contains('*'))
         {
-            Console.WriteLine("Summan är: " + tal1 + tal2);
-        }
-        break;
-
-    case "-":
-        {
-            Console.WriteLine("Summan är: " + (tal1 - tal2));
-        }
-        break;
-
-    case "/":
-        {
-            Console.WriteLine("Summan är: " + (tal1 / tal2));
-        }
-        break;
-
-    default:
-        {
-            Console.WriteLine("Summan är: " + (tal1 * tal2));
-        }
-        break;
-
+        Console.WriteLine("Summan är: " + (tal1 * tal2));
 }
-
-*/
+        else if(outputtext.Contains('/'))
+        {
+         Console.WriteLine("Summan är: " + (tal1 / tal2));
+}
