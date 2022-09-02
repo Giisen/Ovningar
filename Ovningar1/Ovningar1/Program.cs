@@ -451,10 +451,8 @@ else
 // 16. Gör om uppgift 6 så man kan mata in allt på en rad (första talet, operator, andra talet).
 // Ignorera inmatade mellanslag i strängen. Om man t.ex. matar in strängen “34 - 14”, så ska programmet skriva ut “= 20”.
 
-
-
-
- Console.WriteLine("skriv in en uppgift du vill ha uträknad (ex 4*3 eller 32+98)");
+/*
+Console.WriteLine("skriv in en uppgift du vill ha uträknad (ex 4*3 eller 32+98)");
 string input = Console.ReadLine();
 string outputtext = input.Replace(" ", ""); //Tar bort alla mellanslag (white space)
 
@@ -486,3 +484,5 @@ else if(outputtext.Contains('/'))
 {
   Console.WriteLine($"Summan är:  {(tal1 / tal2)}");
 }
+
+*/
