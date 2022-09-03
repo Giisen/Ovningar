@@ -451,20 +451,22 @@ else
 // 16. Gör om uppgift 6 så man kan mata in allt på en rad (första talet, operator, andra talet).
 // Ignorera inmatade mellanslag i strängen. Om man t.ex. matar in strängen “34 - 14”, så ska programmet skriva ut “= 20”.
 
-/*
+
 Console.WriteLine("skriv in en uppgift du vill ha uträknad (ex 4*3 eller 32+98)");
 string input = Console.ReadLine();
 string outputtext = input.Replace(" ", ""); //Tar bort alla mellanslag (white space)
+
+
 
 char[] teckenArray = new char[] { '+', '-', '*', '/' };
 
 string[] tal1string = outputtext.Split(teckenArray); //Splittar outputtext när det förekommer + eller - eller * eller /, till en ny array med två index.
 
-int tal1 = int.Parse(tal1string[0]); //Gör om index 0 från string till int
-//Console.WriteLine(tal1);
+//int tal1 = int.Parse(tal1string[0]); //Gör om index 0 från string till int
+//int tal2 = int.Parse(tal1string[1]); //Gör om index 2 från string till int
 
-int tal2 = int.Parse(tal1string[1]); //Gör om index 2 från string till int
-//Console.WriteLine(tal2);
+double tal1 = double.Parse(tal1string[0]); // Gör om index 0 från string till en double
+double tal2 = double.Parse(tal1string[1]); // Gör om index 1 från string till en double
 
 if (outputtext.Contains('+'))
 {
@@ -485,4 +487,3 @@ else if(outputtext.Contains('/'))
   Console.WriteLine($"Summan är:  {(tal1 / tal2)}");
 }
 
-*/
