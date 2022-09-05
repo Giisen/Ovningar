@@ -492,7 +492,7 @@ else if(outputtext.Contains('/'))
 
 
 // övningar med Niklas
-
+/*
 string text = "Hejsan svejsan";
 char[] textArray = new char[] { 'H', 'e', 'j', 's', 'a', 'n', ' ', 's', 'v', 'e', 'j', 's', 'a', 'n' };
 
@@ -519,3 +519,111 @@ for (int i = 0; i < text.Length; i++)
 
 Console.WriteLine(ord1);
 Console.WriteLine(ord2);
+
+*/
+/*
+// Använder CharArray ist för string.
+string text = "Hejsan svejsan";
+char[] textArray = new char[] { 'H', 'e', 'j', 's', 'a', 'n', ' ', 's', 'v', 'e', 'j', 's', 'a', 'n' };
+
+string ord1 = string.Empty;
+string ord2 = string.Empty;
+bool hittadeord1 = false;
+
+
+for (int i = 0; i < textArray.Length; i++)
+{
+    if (text[i] == ' ')
+    {
+        hittadeord1 = true;
+    }
+    else if (hittadeord1)
+    {
+        ord2 += text[i];
+    }
+    else
+    {
+        ord1 += text[i];
+    }
+}
+
+Console.WriteLine(ord1);
+Console.WriteLine(ord2);
+*/
+
+/*
+// Kör omvänd ordning för arrayen och orden.
+string text = "Hejsan svejsan";
+char[] textArray = new char[] { 'H', 'e', 'j', 's', 'a', 'n', ' ', 's', 'v', 'e', 'j', 's', 'a', 'n' };
+
+string ord1 = string.Empty;
+string ord2 = string.Empty;
+bool hittadeord1 = false;
+
+
+for (int i = textArray.Length-1; i >=0; i--)
+{
+    if (text[i] == ' ')
+    {
+        hittadeord1 = true;
+    }
+    else if (hittadeord1)
+    {
+        ord2 += text[i];
+    }
+    else
+    {
+        ord1 += text[i];
+    }
+}
+
+Console.WriteLine(ord1);
+Console.WriteLine(ord2);
+
+*/
+
+string text = "Hejsan svejsan";
+char[] textArray = new char[] { 'H', 'e', 'j', 's', 'a', 'n', ' ', 's', 'v', 'e', 'j', 's', 'a', 'n' };
+
+string ord1 = string.Empty;
+string ord2 = string.Empty;
+bool hittadeord1 = false;
+
+
+for (int i = textArray.Length - 1; i >= 0; i--)
+{
+    if (text[i] == ' ')
+    {
+        hittadeord1 = true;
+    }
+    else if (hittadeord1)
+    {
+        ord2 += text[i];
+    }
+    else
+    {
+        ord1 += text[i];
+    }
+}
+
+string omvändord1=string.Empty;
+string omvändord2 = string.Empty;
+
+for (int i = ord1.Length - 1; i >= 0; i--)
+{
+    omvändord1+=ord1[i]; // ord1 +text[i]   plussar sig själv med något annat.
+}
+
+for (int i = ord2.Length - 1; i >= 0; i--)
+{
+    omvändord2 += ord2[i];
+}
+
+
+
+Console.WriteLine(ord1);
+Console.WriteLine(ord2);
+
+Console.WriteLine(omvändord1);
+Console.WriteLine(omvändord2);
+
