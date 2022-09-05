@@ -587,8 +587,9 @@ char[] textArray = new char[] { 'H', 'e', 'j', 's', 'a', 'n', ' ', 's', 'v', 'e'
 
 string ord1 = string.Empty;
 string ord2 = string.Empty;
-bool hittadeord1 = false;
 
+
+bool hittadeord1 = false;
 
 for (int i = textArray.Length - 1; i >= 0; i--)
 {
@@ -598,14 +599,16 @@ for (int i = textArray.Length - 1; i >= 0; i--)
     }
     else if (hittadeord1)
     {
-        ord2 += text[i];
+        ord1 += text[i];
     }
     else
     {
-        ord1 += text[i];
+        ord2 += text[i];
     }
 }
 
+
+/*
 string omvändord1=string.Empty;
 string omvändord2 = string.Empty;
 
@@ -619,11 +622,32 @@ for (int i = ord2.Length - 1; i >= 0; i--)
     omvändord2 += ord2[i];
 }
 
+*/
 
 
 Console.WriteLine(ord1);
 Console.WriteLine(ord2);
 
-Console.WriteLine(omvändord1);
-Console.WriteLine(omvändord2);
+//Console.WriteLine(omvändord1);
+//Console.WriteLine(omvändord2);
+
+
+// Lab1------------------------------------------------------------------------------------------
+string input = "29535123p48723487597645723645";
+
+for (int i = 0; i <input.Length; i++)
+{
+    if (input[i] == ' ')
+    {
+        hittadeord1 = true;
+    }
+    else if (hittadeord1)
+    {
+        ord1 += text[i];
+    }
+    else
+    {
+        ord2 += text[i];
+    }
+}
 
