@@ -563,30 +563,6 @@ Console.WriteLine($" Totalt antal tecken utan mellanslag: {textLenghtUtanMellans
 
 
 
-//string ord1 = string.Empty;
-//string ord2 = string.Empty;
-//bool hittadeord = false;
-
-
-//for (int i = 0; i < text.Length; i++)
-//{
-//    if (text[i] == ' ')
-//    {
-//        hittadeord = true;
-//    }
-//    else if (hittadeord)
-//    {
-//        ord2 += text[i];
-//    }
-//    else
-//    {
-//        ord1 += text[i];
-//    }
-//}
-
-
-
-
 
 /*
 
