@@ -500,71 +500,68 @@ else if(outputtext.Contains('/'))
 
 string inputFull = "abcdefghijklmnopqrstuvxyz";
 string inputPart = "klmno";
+int substringIndexStart = 0;
 
-
+string ord0= String.Empty;
 string ord1 = string.Empty;
 string ord2 = string.Empty;
 
 bool hittadeinputPart=false;
 
-//------------------------------------------Får ut delsträngen---------------
+
+//------------------------------------------Får ut vilket index delsträngen börjar på i fulla texten---------------
 for (int j = 0; j < inputFull.Length; j++)
 {
-    for (int i = 0; i < inputPart.Length; i++)
+    for (int i = 0; i < 1; i++)
     {
         if (inputFull[j] == inputPart[i])
         {
-            //ord1 += inputPart[i];
-            hittadeinputPart = true;
+            substringIndexStart = j;
         }
-        else if (hittadeinputPart)
-        {
-            ord2 += inputPart[i];
-        }
-        else
-        {
-            ord1 += inputFull[j];
-        }
+     
     }
-
-    //ord2 += inputFull[j];
+    
 }
 //--------------------------------------------------------------------------------
 
+
+int substringIndexInputPartLenght = inputPart.Length;
+int substringIndexInputFullLenght = inputFull.Length;
+int substringIndexStartOrd2 = substringIndexStart + substringIndexInputPartLenght;
+int substringIndexEnd = substringIndexInputFullLenght - substringIndexStartOrd2;
+//Console.WriteLine(substringIndexInputFullLenght);
+//Console.WriteLine(substringIndexEnd);
+
+
+ord0 = inputFull.Substring(0, substringIndexStart);
+ord1 = inputFull.Substring(substringIndexStart, substringIndexInputPartLenght);
+ord2 = inputFull.Substring(substringIndexStartOrd2, substringIndexEnd);
+
+Console.Write(ord0);
 Console.ForegroundColor = ConsoleColor.Blue;
-Console.WriteLine(ord1);
+Console.Write(ord1);
 Console.ResetColor();
-Console.WriteLine(ord2);
+Console.Write(ord2);
 
-
-
-
-
-
-
-
-
-
-
-
+/*
 
 // övningar med Niklas
-/*
+
 string text = "Hejsan svejsan";
-char[] textArray = new char[] { 'H', 'e', 'j', 's', 'a', 'n', ' ', 's', 'v', 'e', 'j', 's', 'a', 'n' };
+//char[] textArray = new char[] { 'H', 'e', 'j', 's', 'a', 'n', ' ', 's', 'v', 'e', 'j', 's', 'a', 'n' };
 
 string ord1 =string.Empty;
 string ord2 =string.Empty;
-bool hittadeord1=false;
+bool hittadeord=false;
 
 
 for (int i = 0; i < text.Length; i++)
 {
     if (text[i]==' ')
     {
-        hittadeord1=true;
+        hittadeord=true;
     }
-    else if (hittadeord1)
+    else if (hittadeord)
     {
         ord2 += text[i];
     }
@@ -578,7 +575,7 @@ Console.WriteLine(ord1);
 Console.WriteLine(ord2);
 
 
-*/
+
 
 
 /*
