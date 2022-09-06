@@ -500,14 +500,11 @@ else if(outputtext.Contains('/'))
 
 string inputFull = "abcdefghijklmnopqrstuvxyz";
 string inputPart = "klmno";
-int substringIndexStart = 0;
+int substringIndexStart = 0; //Index där första bokstaven som matchar (k) börjar
 
-string ord0= String.Empty;
+string ord0 = string.Empty;
 string ord1 = string.Empty;
 string ord2 = string.Empty;
-
-bool hittadeinputPart=false;
-
 
 //------------------------------------------Får ut vilket index delsträngen börjar på i fulla texten---------------
 for (int j = 0; j < inputFull.Length; j++)
@@ -525,13 +522,10 @@ for (int j = 0; j < inputFull.Length; j++)
 //--------------------------------------------------------------------------------
 
 
-int substringIndexInputPartLenght = inputPart.Length;
-int substringIndexInputFullLenght = inputFull.Length;
-int substringIndexStartOrd2 = substringIndexStart + substringIndexInputPartLenght;
-int substringIndexEnd = substringIndexInputFullLenght - substringIndexStartOrd2;
-//Console.WriteLine(substringIndexInputFullLenght);
-//Console.WriteLine(substringIndexEnd);
-
+int substringIndexInputPartLenght = inputPart.Length; // längden på inputen som ska jämföras, senare kallat ord1
+int substringIndexInputFullLenght = inputFull.Length; // Totalt antal tecken i hela texten, behövs för att räkna ut ord2
+int substringIndexStartOrd2 = substringIndexStart + substringIndexInputPartLenght; // räknar ut startposition för ord2
+int substringIndexEnd = substringIndexInputFullLenght - substringIndexStartOrd2; // räknar ut hur många tecken som ord2 ska bestå av
 
 ord0 = inputFull.Substring(0, substringIndexStart);
 ord1 = inputFull.Substring(substringIndexStart, substringIndexInputPartLenght);
