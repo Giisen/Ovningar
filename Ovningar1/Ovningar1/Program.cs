@@ -491,8 +491,34 @@ else if(outputtext.Contains('/'))
 
 
 
+// 17. Gör ett program som ber användaren mata in en text.
+// Be sedan användaren mata in en sträng som är en del av den första texten.
+// Skriv ut hela texten med den del man angav markerad i en annan färg. Ex.
+// Användare matar in “abcdefghijklmnopqrstuvxyz”, och sedan “defg”.
+// Programmet ska då skriva ut: abcdefghijklmnopqrstuvxyz
+
+
+string inputFull = "abcdefghijklmnopqrstuvxyz";
+string inputPart = "klmno";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // övningar med Niklas
-/*
+
 string text = "Hejsan svejsan";
 char[] textArray = new char[] { 'H', 'e', 'j', 's', 'a', 'n', ' ', 's', 'v', 'e', 'j', 's', 'a', 'n' };
 
@@ -520,7 +546,7 @@ for (int i = 0; i < text.Length; i++)
 Console.WriteLine(ord1);
 Console.WriteLine(ord2);
 
-*/
+
 /*
 // Använder CharArray ist för string.
 string text = "Hejsan svejsan";
@@ -582,6 +608,8 @@ Console.WriteLine(ord2);
 
 */
 
+
+/*
 string text = "Hejsan svejsan";
 char[] textArray = new char[] { 'H', 'e', 'j', 's', 'a', 'n', ' ', 's', 'v', 'e', 'j', 's', 'a', 'n' };
 
@@ -608,7 +636,7 @@ for (int i = textArray.Length - 1; i >= 0; i--)
 }
 
 
-/*
+
 string omvändord1=string.Empty;
 string omvändord2 = string.Empty;
 
@@ -622,32 +650,45 @@ for (int i = ord2.Length - 1; i >= 0; i--)
     omvändord2 += ord2[i];
 }
 
-*/
 
 
-Console.WriteLine(ord1);
-Console.WriteLine(ord2);
+
+//Console.WriteLine(ord1);
+//Console.WriteLine(ord2);
 
 //Console.WriteLine(omvändord1);
 //Console.WriteLine(omvändord2);
-
+*/
 
 // Lab1------------------------------------------------------------------------------------------
+//Bryt om tecknet inte är en siffra!  ----Kanske köra en while skillt från 0-9??
+
+/*
 string input = "29535123p48723487597645723645";
 
-for (int i = 0; i <input.Length; i++)
+string serie1 = string.Empty;
+string serie2 = string.Empty;   
+bool hittadeSerie1=false;
+
+
+
+
+for (int i = 0; i <input.Length-1; i++)
 {
-    if (input[i] == ' ')
+    if (input[i] == input[i+1])
     {
-        hittadeord1 = true;
+        hittadeSerie1 = true;
     }
-    else if (hittadeord1)
+    else if (hittadeSerie1)
     {
-        ord1 += text[i];
+        serie1 += input[i];
     }
     else
     {
-        ord2 += text[i];
+        serie2 += input[i];
     }
 }
+Console.WriteLine(serie1);
+Console.WriteLine(serie2);
 
+*/
