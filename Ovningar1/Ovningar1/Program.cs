@@ -499,7 +499,9 @@ else if(outputtext.Contains('/'))
 
 
 string inputFull = "abcdefghijklmnopqrstuvxyz";
-string inputPart = "klmno";
+string inputPart = "klmnopq";
+
+
 int substringIndexStart = 0; //Index där första bokstaven som matchar (k) börjar
 
 string ord0 = string.Empty;
@@ -526,7 +528,6 @@ int substringIndexInputPartLenght = inputPart.Length; // längden på inputen so
 int substringIndexInputFullLenght = inputFull.Length; // Totalt antal tecken i hela texten, behövs för att räkna ut ord2
 int substringIndexStartOrd2 = substringIndexStart + substringIndexInputPartLenght; // räknar ut startposition för ord2
 int substringIndexEnd = substringIndexInputFullLenght - substringIndexStartOrd2; // räknar ut hur många tecken som ord2 ska bestå av
-
 ord0 = inputFull.Substring(0, substringIndexStart);
 ord1 = inputFull.Substring(substringIndexStart, substringIndexInputPartLenght);
 ord2 = inputFull.Substring(substringIndexStartOrd2, substringIndexEnd);
