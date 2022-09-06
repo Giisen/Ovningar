@@ -496,7 +496,7 @@ else if(outputtext.Contains('/'))
 // Skriv ut hela texten med den del man angav markerad i en annan färg. Ex.
 // Användare matar in “abcdefghijklmnopqrstuvxyz”, och sedan “defg”.
 // Programmet ska då skriva ut: abcdefghijklmnopqrstuvxyz
-
+/*
 
 string inputFull = "abcdefghijklmnopqrstuvxyz";
 string inputPart = "klmnopq";
@@ -517,9 +517,7 @@ for (int j = 0; j < inputFull.Length; j++)
         {
             substringIndexStart = j;
         }
-     
-    }
-    
+     }
 }
 //--------------------------------------------------------------------------------
 
@@ -537,6 +535,58 @@ Console.ForegroundColor = ConsoleColor.Blue;
 Console.Write(ord1);
 Console.ResetColor();
 Console.Write(ord2);
+
+*/
+
+
+//18.Be användaren mata in en mening. Skriv ut det genomsnittliga antalet bokstäver i orden.
+
+Console.WriteLine("Vänligen skriv in en mening:");
+string text = Console.ReadLine();
+string textTrimmad = text.Trim();
+string[] textArray = textTrimmad.Split(" ");
+
+
+int numberofwords = 0;
+for (int i = 0; i < textArray.Length; i++)
+{
+    numberofwords++;
+}
+
+int textLenght = textTrimmad.Length;
+int antalmellanslag = numberofwords-1;
+double textLenghtUtanMellanslag = textLenght - antalmellanslag;
+double result = textLenghtUtanMellanslag/numberofwords;
+
+Console.WriteLine($" Totalt antal tecken utan mellanslag: {textLenghtUtanMellanslag} antal ord: {numberofwords} medel: {result}");
+
+
+
+
+//string ord1 = string.Empty;
+//string ord2 = string.Empty;
+//bool hittadeord = false;
+
+
+//for (int i = 0; i < text.Length; i++)
+//{
+//    if (text[i] == ' ')
+//    {
+//        hittadeord = true;
+//    }
+//    else if (hittadeord)
+//    {
+//        ord2 += text[i];
+//    }
+//    else
+//    {
+//        ord1 += text[i];
+//    }
+//}
+
+
+
+
 
 /*
 
