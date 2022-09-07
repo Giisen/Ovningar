@@ -786,16 +786,76 @@ PrintSum(a, b); //Detta anropar metoden!!!
 
 //Metod som funkar för lab1
 
-string text =Console.ReadLine();
+//void IsCharADigit()
+//{
+//    for (int i = 0; i < text.Length; i++)
+//    {
+//        if (char.IsDigit(text[i]))
+//        {
+//            Console.WriteLine($"Tecknet {text[i]} är ett tal");
+//        }
+//        else
+//        {
+//            Console.WriteLine($"Tecknet {text[i]} är inte ett tal");
+//        }
+//    }
+//}
 
-for(int i=0; i< text.Length; i++)
+
+
+
+
+
+//Console.WriteLine("Srkiv in valfri text:");
+//string text =Console.ReadLine();
+
+//for(int i=0; i< text.Length; i++)
+//{
+//    if (char.IsDigit(text[i]))
+//    {
+//        Console.WriteLine($"Tecknet {text[i]} är ett tal");
+//    }
+//    else
+//    {
+//        Console.WriteLine($"Tecknet {text[i]} är inte ett tal");
+//    }
+//}
+
+
+
+string text = Console.ReadLine();
+string abc = "abc";
+
+if (text.Contains(abc))
 {
-    if (char.IsDigit(text[i]))
-    {
-        Console.WriteLine($"Tecknet {text[i]} är ett tal");
-    }
-    else
-    {
-        Console.WriteLine($"Tecknet {text[i]} är inte ett tal");
-    }
+    Console.WriteLine("Innehåller");
 }
+else
+{
+    Console.WriteLine("nope");
+}
+
+
+
+if (text.StartsWith(abc))
+{
+    Console.WriteLine("startar med");
+}
+else
+{
+    Console.WriteLine("startar med nope");
+}
+
+
+if (text.EndsWith(abc))
+{
+    Console.WriteLine("slutar med");
+}
+else
+{
+    Console.WriteLine("slutar med nope");
+}
+
+
+string substring = text.Substring(1,4);
+Console.WriteLine(substring);
