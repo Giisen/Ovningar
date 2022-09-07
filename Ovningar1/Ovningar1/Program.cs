@@ -496,8 +496,8 @@ else if(outputtext.Contains('/'))
 // Skriv ut hela texten med den del man angav markerad i en annan färg. Ex.
 // Användare matar in “abcdefghijklmnopqrstuvxyz”, och sedan “defg”.
 // Programmet ska då skriva ut: abcdefghijklmnopqrstuvxyz
-/*
 
+/*
 string inputFull = "abcdefghijklmnopqrstuvxyz";
 string inputPart = "klmnopq";
 
@@ -541,6 +541,7 @@ Console.Write(ord2);
 
 //18.Be användaren mata in en mening. Skriv ut det genomsnittliga antalet bokstäver i orden.
 
+/*
 Console.WriteLine("Vänligen skriv in en mening:");
 string text = Console.ReadLine();
 string textTrimmad = text.Trim();
@@ -560,7 +561,7 @@ double result = textLenghtUtanMellanslag/numberofwords;
 
 Console.WriteLine($" Totalt antal tecken utan mellanslag: {textLenghtUtanMellanslag} antal ord: {numberofwords} medel: {result}");
 
-
+*/
 
 
 
@@ -596,7 +597,7 @@ Console.WriteLine(ord1);
 Console.WriteLine(ord2);
 
 
-
+*/
 
 
 /*
@@ -744,3 +745,57 @@ Console.WriteLine(serie1);
 Console.WriteLine(serie2);
 
 */
+
+
+
+/*
+
+//Skriv pseudokod för: "
+//Be användaren mata in en sträng. Skriv ut varje tecken i strängen på en egen rad. Ex: Hej => H e j
+
+//be om input från användaren, lagra input i en variabel
+Console.WriteLine("Hej, skriv in en text");
+string input = Console.ReadLine();
+
+
+//För varje tecken i input
+foreach (char i in input)
+{
+    //Skriv ut tecknet på en ny rad
+    Console.WriteLine(i);
+}
+
+*/
+
+
+
+
+//Metoder---------------------------------------------------Metoder-----------------------------------------
+
+/*
+int a = 1;
+int b = 2;
+
+PrintSum(a, b); //Detta anropar metoden!!!
+
+ void PrintSum(int a, int b)// Namnen inom parantesen används bara där och inte någon annan stans, inom parantesen är våra parametrar
+{
+    Console.WriteLine(a+b);  //Returnerar summan
+}
+*/
+
+//Metod som funkar för lab1
+
+string text =Console.ReadLine();
+
+for(int i=0; i< text.Length; i++)
+{
+    if (char.IsDigit(text[i]))
+    {
+        Console.WriteLine($"Tecknet {text[i]} är ett tal");
+    }
+    else
+    {
+        Console.WriteLine($"Tecknet {text[i]} är inte ett tal");
+    }
+}
