@@ -822,7 +822,7 @@ PrintSum(a, b); //Detta anropar metoden!!!
 //}
 
 
-
+/*
 string text = Console.ReadLine();
 string abc = "abc";
 
@@ -859,3 +859,74 @@ else
 
 string substring = text.Substring(1,4);
 Console.WriteLine(substring);
+
+*/
+
+
+//-----------------------------------------Random------------------------------------------
+/*
+Random rand=new Random();
+
+for (int i = 0; i <5; i++)
+{
+    int tal = rand.Next(1,4);
+    Console.WriteLine(tal);
+}
+*/
+//-------------------------------------------------------------------------------------------
+
+
+// ----------------------------------------------------Mer Metoder-------------------------------------------------------------
+
+
+//void PrintSum(int a, int b) //-----detta kallas för signaturen
+//{
+//    Console.WriteLine(a+b);		// detta är signature body
+//}
+
+
+
+
+//int sum = Add(1, 2);
+//Console.WriteLine(sum);
+
+//int Add(int a , int b)
+//{
+//    return a+b; 
+//}
+
+Console.WriteLine("Skriv in tal 1");
+string input;
+input=Console.ReadLine();
+//double input1=double.Parse(input);
+double input1=double.Parse(Console.ReadLine());
+
+Console.WriteLine("Skriv in operator");
+input =Console.ReadLine();
+char op = input[0];
+
+Console.WriteLine("Skriv in tal 2");
+input =Console.ReadLine();
+double input2=double.Parse(input);
+
+double result = Calculate(input1, input2, op);
+
+Console.WriteLine($"Resultatet blir: {result}");
+
+
+double Calculate(double a, double b, char op)
+{
+    switch(op)
+    {
+        case '+':
+            return a + b;
+        case '-':
+            return a - b;
+        case '*':
+            return a * b;
+        case '/':
+            return a / b;
+        default:
+            return 0;
+    }
+}
