@@ -890,11 +890,12 @@ for (int i = 0; i <5; i++)
 //int sum = Add(1, 2);
 //Console.WriteLine(sum);
 
-//int Add(int a , int b)
+//int Add(int a, int b)
 //{
-//    return a+b; 
+//    return a + b;
 //}
 
+/*
 Console.WriteLine("Skriv in tal 1");
 string input;
 input=Console.ReadLine();
@@ -930,3 +931,136 @@ double Calculate(double a, double b, char op)
             return 0;
     }
 }
+
+*/
+
+
+//En bubble sort
+
+/*
+int[] tal= new int[] {9,3,20,5,4,1};
+
+for (int i = 0; i < tal.Length; i++)
+{
+    
+    for (int j = 0; j < tal.Length; j++)
+    {
+        if (tal[i] < tal[j])
+        {
+            int temp = tal[i]; //temp första 9
+            tal[i] = tal[j]; // tal[i] = 20
+            tal[j] = temp; // tal[j] =9
+        }
+
+    }
+    
+
+}
+foreach (int x in tal)
+{
+    Console.WriteLine(x);
+}
+
+*/
+
+
+//-------------------------------------------------Array sort-------------------------------------------------
+
+//Array.Sort väljer mellan olika typer av sort beroende på antalet element. Om det är 16 eller färre, då insertion sort.
+// om det är väldigt många element så används heap sort. Annars quick sort.
+
+
+
+char[] bokstav = new char[] { 'a', 'å', 't','f', 'j', 'd' };
+
+Array.Sort(bokstav);
+
+foreach (char x in bokstav)
+{
+    Console.Write(x);
+}
+
+Console.WriteLine();
+
+
+int[] tal = new int[] { 1, 7, 9, 54, 0, 3 };
+
+Array.Sort(tal);
+
+foreach (int y in tal)
+{
+    Console.Write(y);
+}
+
+Console.WriteLine();
+
+string[] arr = new string[] {"Hund","hej","abc"};
+
+Array.Sort(arr);
+
+foreach (string z in arr)
+{
+    Console.Write(z+" ");
+}
+
+//-----------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+//19.Skriv en metod DrawBox(int width, int height) När man anropar metoden ska den tömma konsolen
+och skriva ut en rektangel där de yttre tecknen består av ‘#’ och de inre av ‘-’ Exempel:
+DrawBox(7, 4);
+#######
+#-----#
+#-----#
+#######
+*/
+/*
+
+DrawBox(7, 4);
+//Console.Write(skriv);
+
+
+void DrawBox(int width, int height)
+{
+    
+    Console.Clear();
+    for (int x = 1; x < width; x++)
+    {
+        Console.Write("#");
+    }
+    //Console.WriteLine();
+    for (int y = 1; y < height; y++)
+    {
+        Console.Write("#");
+        Console.WriteLine();
+        Console.Write("#");
+        for (int z = 1; z < width-1; z++)
+        {
+            Console.Write("-");
+        }
+        
+    }
+    Console.Write("#");
+    Console.WriteLine();
+    for (int q = 1; q < width+1; q++)
+    {
+        Console.Write("#");
+    }
+
+}
+*/
