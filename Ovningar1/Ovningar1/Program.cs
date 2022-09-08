@@ -969,7 +969,7 @@ foreach (int x in tal)
 //Array.Sort väljer mellan olika typer av sort beroende på antalet element. Om det är 16 eller färre, då insertion sort.
 // om det är väldigt många element så används heap sort. Annars quick sort.
 
-
+/*
 
 char[] bokstav = new char[] { 'a', 'å', 't','f', 'j', 'd' };
 
@@ -1003,16 +1003,9 @@ foreach (string z in arr)
     Console.Write(z+" ");
 }
 
+*/
+
 //-----------------------------------------------------------------------
-
-
-
-
-
-
-
-
-
 
 
 
@@ -1029,27 +1022,26 @@ DrawBox(7, 4);
 #-----#
 #######
 */
-/*
 
-DrawBox(7, 4);
-//Console.Write(skriv);
+
+DrawBox(10, 10); //Anropar metoden DrawBox och anger width och height
 
 
 void DrawBox(int width, int height)
 {
     
     Console.Clear();
-    for (int x = 1; x < width; x++)
+    for (int x = 0; x < width-1; x++)
     {
         Console.Write("#");
     }
-    //Console.WriteLine();
-    for (int y = 1; y < height; y++)
+    
+    for (int y = 0; y < height-2; y++)
     {
         Console.Write("#");
         Console.WriteLine();
         Console.Write("#");
-        for (int z = 1; z < width-1; z++)
+        for (int z = 0; z < width-2; z++)
         {
             Console.Write("-");
         }
@@ -1057,10 +1049,9 @@ void DrawBox(int width, int height)
     }
     Console.Write("#");
     Console.WriteLine();
-    for (int q = 1; q < width+1; q++)
+    for (int q = 0; q < width; q++)
     {
         Console.Write("#");
     }
 
 }
-*/
