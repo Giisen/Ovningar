@@ -359,12 +359,34 @@ for(int i=0;i<text.Length;i++)
 // 11. Skapa ett program med en array som innehåller strängarna “noll”, “ett”, “två”, “tre”, “fyra”, “fem”, “sex”, “sju”, “åtta”, “nio”.
 // Be sedan användaren att mata in en siffra. Använd arrayen för att skriva ut siffrans ord. Ex. Inmatning “3” => “tre”.
 /*
-string[] minArray = new string[10] {"noll", "ett", "två", "tre", "fyra", "fem", "sex", "sju", "åtta", "nio"};
+string[] minArray ={"noll", "ett", "två", "tre", "fyra", "fem", "sex", "sju", "åtta", "nio"};
 
 Console.WriteLine("Vänligen skriv en siffra");
 var input = int.TryParse(Console.ReadLine(), out int tal);
 
 Console.WriteLine(minArray[tal]);
+*/
+
+// 11.B
+/*
+string[] minArray = { "noll", "ett", "två", "tre", "fyra", "fem", "sex", "sju", "åtta", "nio" };
+
+Console.WriteLine("Vänligen skriv en siffra");
+string input = Console.ReadLine();  
+string output = string.Empty;
+
+for(int i = 0; i < input.Length; i++)
+{
+    string teckenString = "" + input[i];
+    int inputTal = int.Parse(teckenString);
+    output += minArray[inputTal];
+    if(i<input.Length-1)
+    {
+        output += "-";
+    }
+}
+
+Console.WriteLine(output);
 */
 
 
@@ -409,6 +431,7 @@ foreach (char c in charArray)
 */
 
 // 14.Be användaren mata in en text. Skriv ut texten med alla vokaler ersatta med *
+
 /*
 Console.WriteLine("Vänligen skriv in en text:\n");
 string inputtext = Console.ReadLine();
@@ -420,6 +443,39 @@ Console.WriteLine(outputtext);
 
 Console.ReadKey();
 */
+
+// Rövarspråket
+
+Console.WriteLine("Vänligen skriv in en text:");
+string inputtext = Console.ReadLine();
+//char[] inputChar = inputtext.ToCharArray();
+char[] vokaler = { 'a', 'e', 'i', 'o', 'u', 'y', 'å', 'ä', 'ö' };
+string output = string.Empty;
+//string temp = string.Empty;
+
+for (int i = 0; i < inputtext.Length; i++)
+{
+    output += inputtext[i];
+    if (vokaler.Contains(inputtext[i]))
+    {
+           continue;
+    }
+   
+        output += "o" + inputtext[i];
+    
+    //output += "o" + inputtext[i];
+    //output += "o"+ inputtext[i];
+    //temp += "o" + inputtext[i];
+    //output += temp.ToLower();
+
+}
+
+Console.WriteLine(output);
+Console.ReadKey();
+
+
+
+
 
 
 //15. Ett palindrom är ett ord som blir samma framlänges som baklänges.
@@ -461,9 +517,6 @@ string outputtext = input.Replace(" ", ""); //Tar bort alla mellanslag (white sp
 char[] teckenArray = new char[] { '+', '-', '*', '/' };
 
 string[] tal1string = outputtext.Split(teckenArray); //Splittar outputtext när det förekommer + eller - eller * eller /, till en ny array med två index.
-
-//int tal1 = int.Parse(tal1string[0]); //Gör om index 0 från string till int
-//int tal2 = int.Parse(tal1string[1]); //Gör om index 2 från string till int
 
 double tal1 = double.Parse(tal1string[0]); // Gör om index 0 från string till en double
 double tal2 = double.Parse(tal1string[1]); // Gör om index 1 från string till en double
@@ -1023,29 +1076,28 @@ DrawBox(7, 4);
 #######
 */
 
-
+/*
 DrawBox(10, 10); //Anropar metoden DrawBox och anger width och height
-
 
 void DrawBox(int width, int height)
 {
-    
+
     Console.Clear();
-    for (int x = 0; x < width-1; x++)
+    for (int x = 0; x < width - 1; x++)
     {
         Console.Write("#");
     }
-    
-    for (int y = 0; y < height-2; y++)
+
+    for (int y = 0; y < height - 2; y++)
     {
         Console.Write("#");
         Console.WriteLine();
         Console.Write("#");
-        for (int z = 0; z < width-2; z++)
+        for (int z = 0; z < width - 2; z++)
         {
             Console.Write("-");
         }
-        
+
     }
     Console.Write("#");
     Console.WriteLine();
@@ -1053,5 +1105,108 @@ void DrawBox(int width, int height)
     {
         Console.Write("#");
     }
-
 }
+*/
+
+/*
+ *    void DrawBox(int w, int h)
+    {
+        Console.WriteLine(new string('#', w));
+        Console.Write(string.Concat(Enumerable.Repeat($"#{new string(' ', w - 2)}#\n", h - 2))); 
+        Console.WriteLine(new string('#', w));
+    }
+*/
+
+
+//20. Använd DrawBox-metoden i föregående uppgift för att rita en box.
+//Placera sedan ett @ i mitten av boxen. Om man använder piltangenterna ska man kunna flytta runt @.
+//När den kommer till kanten av boxen så ska den inte kunna gå längre åt det hållet.
+//Hint: För att flytta @ behöver du skriva ‘-’ på dess tidigare position och ‘@’ på den nya positionen.
+//Spara bredd och höjd på boxen så du vet när den ska stanna.
+
+/*
+
+Console.WriteLine("hur stor ska rutan vara? Börja med att ange bredden");
+int bredd =Convert.ToInt32(Console.ReadLine());
+
+Console.WriteLine("Ange höjden");
+int hojd = Convert.ToInt32(Console.ReadLine());
+
+
+DrawBox(bredd, hojd); //Anropar metoden DrawBox och anger width och height
+
+
+void DrawBox(int width, int height)
+{
+    int inneW=width-1;
+    int inneH=height-1;
+    Console.Clear();
+
+    for (int h = 0; h < height; h++)
+    {
+
+        for (int w = 0; w < width; w++)
+        {
+
+            if (inneW<width)
+            {
+                Console.Write("I");
+            }
+            else
+            {
+                Console.Write("#");
+            }
+            //Console.Write("#");
+        }
+        Console.WriteLine();
+
+
+
+
+
+        //Console.WriteLine();
+        //for( h = 0; h < height - 1; h++)
+        //{
+        //    Console.Write("I");
+        //}
+        // Inne i denna loopen måste det vara som @ ska vara med.
+        //for ( h = 0; h < height - 2; h++)
+        //{
+        //    Console.Write("#");
+        //    Console.WriteLine();
+        //    Console.Write("#");
+        //    int mittenH =height/2;
+        //    int mittenW =width/2;
+        //    int wInne = w - 2;
+        //    var hInne = h - 2;
+
+
+        //    for (z=0; wInne; z++)
+        //    {
+        //        Console.WriteLine("-");
+        //    }
+
+
+        //for (int z = 0; z < width - 2; z++)
+        //{
+        //    Console.Write("-");
+        //}
+
+        //if (atY == mittenH)
+        //{
+        //    Console.Write("@");
+        //}
+
+
+
+        //Console.Write("#");
+        //Console.WriteLine();
+        //for (int q = 0; q < width; q++)
+        //{
+        //    Console.Write("#");
+        //}
+
+    }
+}
+
+*/
