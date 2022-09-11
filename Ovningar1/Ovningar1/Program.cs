@@ -1133,6 +1133,8 @@ void DrawBox(int width, int height)
 
 
 
+using System.Security.Cryptography.X509Certificates;
+
 Console.WriteLine("hur stor ska rutan vara? Börja med att ange bredden");
 int width = Convert.ToInt32(Console.ReadLine());
 
@@ -1144,44 +1146,63 @@ int heightMitt = height / 2;
 
 DrawBox(width, height);
 
-
+bool exitKey = false;
 
 
 void DrawBox(int width, int height)
 {
-
-    Console.Clear();
-    for (int w = 0; w < width - 1; w++)
+    while (!exitKey)
     {
-        Console.Write("#");
-    }
+        Console.Clear();
+        for (int w = 0; w < width - 1; w++)
+        {
+            Console.Write("#");
+        }
 
-    for (int h = 0; h < height - 2; h++)
-    {
+        for (int h = 0; h < height - 2; h++)
+        {
+            Console.Write("#");
+            Console.WriteLine();
+            Console.Write("#");
+            for (int x = 0; x < width - 2; x++)
+            {
+                if (x == widhtMitt - 1 && h == heightMitt - 1)
+                {
+                    Console.Write("@");
+                }
+                else
+                {
+                    Console.Write("-");
+                }
+            }
+
+        }
         Console.Write("#");
         Console.WriteLine();
-        Console.Write("#");
-        for (int x = 0; x < width - 2; x++)
+        for (int q = 0; q < width; q++)
         {
-            if (x == widhtMitt-1 && h == heightMitt-1)
-            {
-                Console.Write("@");
-            }
-            else
-            {
-                Console.Write("-");
-            }
+            Console.Write("#");
+        }
+        Console.ReadKey();
+
+        var inputKey = Console.ReadKey();
+        switch (inputKey)
+        {
+
+            case ConsoleKey.LeftArrow:
+                {
+                    // Hmmm.....här ska en variabel ++
+                   
+                }
+
+            default:
+                {
+                    exitKey = true; 
+                }
+
         }
 
     }
-    Console.Write("#");
-    Console.WriteLine();
-    for (int q = 0; q < width; q++)
-    {
-        Console.Write("#");
-    }
-
-
     
 }
 
