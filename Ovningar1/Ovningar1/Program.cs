@@ -1131,89 +1131,57 @@ void DrawBox(int width, int height)
 //Hint: För att flytta @ behöver du skriva ‘-’ på dess tidigare position och ‘@’ på den nya positionen.
 //Spara bredd och höjd på boxen så du vet när den ska stanna.
 
-/*
+
 
 Console.WriteLine("hur stor ska rutan vara? Börja med att ange bredden");
-int bredd =Convert.ToInt32(Console.ReadLine());
+int width = Convert.ToInt32(Console.ReadLine());
 
 Console.WriteLine("Ange höjden");
-int hojd = Convert.ToInt32(Console.ReadLine());
+int height = Convert.ToInt32(Console.ReadLine());
+
+int widhtMitt = width / 2;
+int heightMitt = height / 2;
+
+DrawBox(width, height);
 
 
-DrawBox(bredd, hojd); //Anropar metoden DrawBox och anger width och height
 
 
 void DrawBox(int width, int height)
 {
-    int inneW=width-1;
-    int inneH=height-1;
+
     Console.Clear();
-
-    for (int h = 0; h < height; h++)
+    for (int w = 0; w < width - 1; w++)
     {
+        Console.Write("#");
+    }
 
-        for (int w = 0; w < width; w++)
+    for (int h = 0; h < height - 2; h++)
+    {
+        Console.Write("#");
+        Console.WriteLine();
+        Console.Write("#");
+        for (int x = 0; x < width - 2; x++)
         {
-
-            if (inneW<width)
+            if (x == widhtMitt-1 && h == heightMitt-1)
             {
-                Console.Write("I");
+                Console.Write("@");
             }
             else
             {
-                Console.Write("#");
+                Console.Write("-");
             }
-            //Console.Write("#");
         }
-        Console.WriteLine();
-
-
-
-
-
-        //Console.WriteLine();
-        //for( h = 0; h < height - 1; h++)
-        //{
-        //    Console.Write("I");
-        //}
-        // Inne i denna loopen måste det vara som @ ska vara med.
-        //for ( h = 0; h < height - 2; h++)
-        //{
-        //    Console.Write("#");
-        //    Console.WriteLine();
-        //    Console.Write("#");
-        //    int mittenH =height/2;
-        //    int mittenW =width/2;
-        //    int wInne = w - 2;
-        //    var hInne = h - 2;
-
-
-        //    for (z=0; wInne; z++)
-        //    {
-        //        Console.WriteLine("-");
-        //    }
-
-
-        //for (int z = 0; z < width - 2; z++)
-        //{
-        //    Console.Write("-");
-        //}
-
-        //if (atY == mittenH)
-        //{
-        //    Console.Write("@");
-        //}
-
-
-
-        //Console.Write("#");
-        //Console.WriteLine();
-        //for (int q = 0; q < width; q++)
-        //{
-        //    Console.Write("#");
-        //}
 
     }
+    Console.Write("#");
+    Console.WriteLine();
+    for (int q = 0; q < width; q++)
+    {
+        Console.Write("#");
+    }
+
+
+    
 }
 
-*/
