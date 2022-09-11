@@ -444,25 +444,32 @@ Console.WriteLine(outputtext);
 Console.ReadKey();
 */
 
+/*
 // Rövarspråket
 
 Console.WriteLine("Vänligen skriv in en text:");
 string inputtext = Console.ReadLine();
 //char[] inputChar = inputtext.ToCharArray();
 char[] vokaler = { 'a', 'e', 'i', 'o', 'u', 'y', 'å', 'ä', 'ö' };
+string[] vokstring = {"a","e","i","o","u","y","å","ä","ö"}; 
 string output = string.Empty;
 //string temp = string.Empty;
+
 
 for (int i = 0; i < inputtext.Length; i++)
 {
     output += inputtext[i];
+
+
     if (vokaler.Contains(inputtext[i]))
-    {
-           continue;
-    }
-   
-        output += "o" + inputtext[i];
+        {
+            continue;
+        }
     
+        //output += inputtext[i];
+        
+    
+    output += "o" + inputtext[i];
     //output += "o" + inputtext[i];
     //output += "o"+ inputtext[i];
     //temp += "o" + inputtext[i];
@@ -473,7 +480,7 @@ for (int i = 0; i < inputtext.Length; i++)
 Console.WriteLine(output);
 Console.ReadKey();
 
-
+*/
 
 
 
