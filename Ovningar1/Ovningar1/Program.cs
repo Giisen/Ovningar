@@ -1084,6 +1084,7 @@ DrawBox(7, 4);
 */
 
 /*
+
 DrawBox(10, 10); //Anropar metoden DrawBox och anger width och height
 
 void DrawBox(int width, int height)
@@ -1133,7 +1134,6 @@ void DrawBox(int width, int height)
 
 
 
-using System.Security.Cryptography.X509Certificates;
 
 Console.WriteLine("hur stor ska rutan vara? Börja med att ange bredden");
 int width = Convert.ToInt32(Console.ReadLine());
@@ -1143,10 +1143,11 @@ int height = Convert.ToInt32(Console.ReadLine());
 
 int widhtMitt = width / 2;
 int heightMitt = height / 2;
+int atX = widhtMitt-1;
+int atY = heightMitt-1;
+bool exitKey = false;
 
 DrawBox(width, height);
-
-bool exitKey = false;
 
 
 void DrawBox(int width, int height)
@@ -1166,7 +1167,8 @@ void DrawBox(int width, int height)
             Console.Write("#");
             for (int x = 0; x < width - 2; x++)
             {
-                if (x == widhtMitt - 1 && h == heightMitt - 1)
+                //if (x == widhtMitt - 1 && h == heightMitt - 1)
+                if(x== atX && h== atY)
                 {
                     Console.Write("@");
                 }
@@ -1186,20 +1188,44 @@ void DrawBox(int width, int height)
         Console.ReadKey();
 
         var inputKey = Console.ReadKey();
-        switch (inputKey)
+        
+        switch (inputKey.Key)
         {
 
             case ConsoleKey.LeftArrow:
+                
                 {
-                    // Hmmm.....här ska en variabel ++
-                   
+                    atX--;
                 }
+                break;
+
+            case ConsoleKey.RightArrow:
+                
+                {
+                    atX++;
+                }
+                break;
+
+            case ConsoleKey.UpArrow:
+
+                {
+                    atY--;
+                }
+                break;
+
+            case ConsoleKey.DownArrow:
+
+                {
+                    atY++;
+                }
+                break;
+
 
             default:
                 {
                     exitKey = true; 
                 }
-
+                break;
         }
 
     }
