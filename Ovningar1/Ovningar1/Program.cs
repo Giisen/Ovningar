@@ -1179,67 +1179,83 @@ void DrawBox(int width, int height)
 
 
 
-void WriteAt(int atX, int atY)
+
+while (!exitKey)
 {
-    Console.SetCursorPosition(atX,atY);
-    Console.Write(at);
-    Console.SetCursorPosition(atX--, atY--); // Denna funkar inte.
-    Console.Write(dash);
+    var inputKey = Console.ReadKey();
+
+    switch (inputKey.Key)
+    {
+
+        case ConsoleKey.LeftArrow:
+
+            {
+                if (atX > 1)
+                {
+                    Console.SetCursorPosition(atX, atY);
+                    Console.Write(dash);
+                    Console.SetCursorPosition(atX - 1, atY);
+                    Console.Write(at);
+                    Console.SetCursorPosition(0,0);
+                    atX--;
+                    
+                }
+            }
+            break;
+
+        case ConsoleKey.RightArrow:
+
+            {
+                if (atX < width - 2)
+                {
+                    Console.SetCursorPosition(atX, atY);
+                    Console.Write(dash);
+                    Console.SetCursorPosition(atX + 1, atY);
+                    Console.Write(at);
+                    Console.SetCursorPosition(0, 0);
+                    atX++;
+                    
+                }
+            }
+            break;
+
+        case ConsoleKey.UpArrow:
+
+            {
+                if (atY > 1)
+                {
+                    Console.SetCursorPosition(atX, atY);
+                    Console.Write(dash);
+                    Console.SetCursorPosition(atX, atY-1);
+                    Console.Write(at);
+                    Console.SetCursorPosition(0, 0);
+                    atY--;
+                }
+            }
+            break;
+
+        case ConsoleKey.DownArrow:
+
+            {
+                if (atY < height - 2)
+                {
+                    Console.SetCursorPosition(atX, atY);
+                    Console.Write(dash);
+                    Console.SetCursorPosition(atX, atY + 1);
+                    Console.Write(at);
+                    Console.SetCursorPosition(0, 0);
+                    atY++;
+                }
+            }
+            break;
+
+        default:
+            {
+                exitKey = true;
+            }
+            break;
+    }
 }
-
-var inputKey = Console.ReadKey();
-
-switch (inputKey.Key)
-{
-
-    case ConsoleKey.LeftArrow:
-
-        {
-            if (atX > 1)
-            {
-                WriteAt(atX--, atY); //atX--;
-            }
-        }
-        break;
-
-    case ConsoleKey.RightArrow:
-
-        {
-            if (atX < width - 2)
-            {
-                WriteAt(atX, atY);
-                atX++;
-            }
-        }
-        break;
-
-    case ConsoleKey.UpArrow:
-
-        {
-            if (atY > 1)
-            {
-                atY--;
-            }
-        }
-        break;
-
-    case ConsoleKey.DownArrow:
-
-        {
-            if (atY < height - 2)
-            {
-                atY++;
-            }
-        }
-        break;
-
-    default:
-        {
-            exitKey = true;
-        }
-        break;
-}
-
 
 
 
