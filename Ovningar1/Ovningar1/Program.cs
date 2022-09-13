@@ -1177,7 +1177,7 @@ void DrawBox(int width, int height)
     }
 }
 
-
+Console.CursorVisible = false; //Gömmer Cursor
 
 
 while (!exitKey)
