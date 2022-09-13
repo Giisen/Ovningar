@@ -1144,10 +1144,106 @@ int heightMitt = height / 2;
 int atX = widhtMitt;
 int atY = heightMitt;
 bool exitKey = false;
-//bool insideBox = atX > 0 && atX < width - 2 && atY > 0 && atY < height - 2;
+string at = "@";
 
 DrawBox(width, height);
 
+void DrawBox(int width, int height)
+{
+
+    Console.Clear();
+    for (int h = 0; h < height; h++)
+    {
+
+        for (int w = 0; w < width; w++)
+        {
+
+            if (h == 0 || h == height - 1 || w == 0 || w == width - 1)
+            {
+                Console.Write("#");
+            }
+            else if (w == atX && h == atY)
+            {
+                Console.Write("@");
+            }
+            else
+            {
+                Console.Write("-");
+            }
+
+        }
+        Console.WriteLine();
+    }
+}
+
+WriteAt(atX, atY);
+
+void WriteAt(int atX, int atY);
+{
+    Console.SetCursorPosition(atY,atX);
+    Console.Write(at);
+}
+
+var inputKey = Console.ReadKey();
+
+switch (inputKey.Key)
+{
+
+    case ConsoleKey.LeftArrow:
+
+        {
+            if (atX > 1)
+            {
+                atX--;
+            }
+        }
+        break;
+
+    case ConsoleKey.RightArrow:
+
+        {
+            if (atX < width - 2)
+            {
+                atX++;
+            }
+        }
+        break;
+
+    case ConsoleKey.UpArrow:
+
+        {
+            if (atY > 1)
+            {
+                atY--;
+            }
+        }
+        break;
+
+    case ConsoleKey.DownArrow:
+
+        {
+            if (atY < height - 2)
+            {
+                atY++;
+            }
+        }
+        break;
+
+    default:
+        {
+            exitKey = true;
+        }
+        break;
+}
+
+
+
+
+
+
+
+
+/*---------------------------------------------Alternativ lösning som skriver om hela boxen------------------------------------------------------------
 
 void DrawBox(int width, int height)
 {
@@ -1163,7 +1259,6 @@ void DrawBox(int width, int height)
                 if (h == 0 || h == height - 1 || w == 0 || w == width - 1)
                 {
                     Console.Write("#");
-
                 }
                 else if (w == atX && h == atY)
                 {
@@ -1223,7 +1318,6 @@ void DrawBox(int width, int height)
                 }
                 break;
 
-
             default:
                 {
                     exitKey = true;
@@ -1233,3 +1327,4 @@ void DrawBox(int width, int height)
     }
 }
 
+*/
