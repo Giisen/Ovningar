@@ -1141,8 +1141,8 @@ int height = Convert.ToInt32(Console.ReadLine());
 
 int widhtMitt = width / 2;
 int heightMitt = height / 2;
-int atX = widhtMitt - 1;
-int atY = heightMitt - 1;
+int atX = widhtMitt;
+int atY = heightMitt;
 bool exitKey = false;
 bool insideBox = atX > 0 && atX < width - 2 && atY > 0 && atY < height - 2;
 
@@ -1151,111 +1151,73 @@ DrawBox(width, height);
 
 void DrawBox(int width, int height)
 {
-    Console.Clear();
-    for (int h = 0; h < height; h++)
+    while (exitKey == false)
     {
-
-        for (int w = 0; w < width; w++)
+        Console.Clear();
+        for (int h = 0; h < height; h++)
         {
-            if (h==0 || h == height-1 || w==0 || w==width-2)
+
+            for (int w = 0; w < width; w++)
             {
-                Console.Write("#");
-                
+
+                if (h == 0 || h == height - 1 || w == 0 || w == width - 1)
+                {
+                    Console.Write("#");
+
+                }
+                else if (w == atX && h == atY)   //(w == widhtMitt && h == heightMitt)
+                {
+                    Console.Write("@");
+                }
+                else
+                {
+                    Console.Write("-");
+                }
+
             }
-            if(h>0 && w < width - 2 && h<height-1)
-            {
-                Console.Write("-");
-            }
-                        
+            Console.WriteLine();
+
         }
-        Console.WriteLine();
+        var inputKey = Console.ReadKey();
+
+        switch (inputKey.Key)
+        {
+
+            case ConsoleKey.LeftArrow:
+
+                {
+                    atX--;
+                }
+                break;
+
+            case ConsoleKey.RightArrow:
+
+                {
+                    atX++;
+                }
+                break;
+
+            case ConsoleKey.UpArrow:
+
+                {
+                    atY--;
+                }
+                break;
+
+            case ConsoleKey.DownArrow:
+
+                {
+                    atY++;
+                }
+                break;
 
 
-        //while (!exitKey)
-        //{
-        //    Console.Clear();
-        //    for (int w = 0; w < width - 1; w++)
-        //    {
-        //        Console.Write("#");
-        //    }
-
-        //    for (int h = 0; h < height - 2; h++)
-        //    {
-        //        Console.Write("#");
-        //        Console.WriteLine();
-        //        Console.Write("#");
-        //        for (int x = 0; x < width - 2; x++)
-        //        {
-
-        //            if (x == atX && h == atY)
-        //            {
-        //                Console.Write("@");
-        //            }
-        //            else
-        //            {
-        //                Console.Write("-");
-        //            }
-        //        }
-
-        //    }
-        //    Console.Write("#");
-        //    Console.WriteLine();
-        //    for (int q = 0; q < width; q++)
-        //    {
-        //        Console.Write("#");
-        //    }
-        //    while (insideBox)
-        //    {
-        //        //if (atX > 0 && atX < width - 2 && atY > 0 && atY < height - 2)
-        //        //{
-
-        //        var inputKey = Console.ReadKey();
-
-        //        switch (inputKey.Key)
-        //        {
-
-        //            case ConsoleKey.LeftArrow:
-
-        //                {
-        //                    atX--;
-        //                }
-        //                break;
-
-        //            case ConsoleKey.RightArrow:
-
-        //                {
-        //                    atX++;
-        //                }
-        //                break;
-
-        //            case ConsoleKey.UpArrow:
-
-        //                {
-        //                    atY--;
-        //                }
-        //                break;
-
-        //            case ConsoleKey.DownArrow:
-
-        //                {
-        //                    atY++;
-        //                }
-        //                break;
-
-
-        //            default:
-        //                {
-        //                    exitKey = true;
-        //                }
-        //                break;
-        //        }
-        //    }
-
-        //    //}
-        //}
-
+            default:
+                {
+                    exitKey = true;
+                }
+                break;
+        }
     }
 }
-
-
 
