@@ -1144,7 +1144,7 @@ int heightMitt = height / 2;
 int atX = widhtMitt;
 int atY = heightMitt;
 bool exitKey = false;
-bool insideBox = atX > 0 && atX < width - 2 && atY > 0 && atY < height - 2;
+//bool insideBox = atX > 0 && atX < width - 2 && atY > 0 && atY < height - 2;
 
 DrawBox(width, height);
 
@@ -1165,7 +1165,7 @@ void DrawBox(int width, int height)
                     Console.Write("#");
 
                 }
-                else if (w == atX && h == atY)   //(w == widhtMitt && h == heightMitt)
+                else if (w == atX && h == atY)
                 {
                     Console.Write("@");
                 }
@@ -1186,28 +1186,40 @@ void DrawBox(int width, int height)
             case ConsoleKey.LeftArrow:
 
                 {
-                    atX--;
+                    if (atX > 1)
+                    {
+                        atX--;
+                    }
                 }
                 break;
 
             case ConsoleKey.RightArrow:
 
                 {
-                    atX++;
+                    if (atX < width-2)
+                    {
+                        atX++;
+                    }
                 }
                 break;
 
             case ConsoleKey.UpArrow:
 
                 {
-                    atY--;
+                    if (atY > 1)
+                    {
+                        atY--;
+                    }
                 }
                 break;
 
             case ConsoleKey.DownArrow:
 
                 {
-                    atY++;
+                    if (atY < height-2)
+                    {
+                        atY++;
+                    }
                 }
                 break;
 
