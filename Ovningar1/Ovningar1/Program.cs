@@ -1145,6 +1145,7 @@ int atX = widhtMitt;
 int atY = heightMitt;
 bool exitKey = false;
 string at = "@";
+string dash = "-";
 
 DrawBox(width, height);
 
@@ -1176,12 +1177,14 @@ void DrawBox(int width, int height)
     }
 }
 
-WriteAt(atX, atY);
 
-void WriteAt(int atX, int atY);
+
+void WriteAt(int atX, int atY)
 {
-    Console.SetCursorPosition(atY,atX);
+    Console.SetCursorPosition(atX,atY);
     Console.Write(at);
+    Console.SetCursorPosition(atX--, atY--); // Denna funkar inte.
+    Console.Write(dash);
 }
 
 var inputKey = Console.ReadKey();
@@ -1194,7 +1197,7 @@ switch (inputKey.Key)
         {
             if (atX > 1)
             {
-                atX--;
+                WriteAt(atX--, atY); //atX--;
             }
         }
         break;
@@ -1204,6 +1207,7 @@ switch (inputKey.Key)
         {
             if (atX < width - 2)
             {
+                WriteAt(atX, atY);
                 atX++;
             }
         }
