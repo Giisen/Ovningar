@@ -1267,6 +1267,12 @@ int width = Convert.ToInt32(Console.ReadLine());
 Console.WriteLine("Ange höjden");
 int height = Convert.ToInt32(Console.ReadLine());
 
+Console.WriteLine("Ange antalet slupade '#' inne i boxen");
+int slumpHash = Convert.ToInt32(Console.ReadLine());
+Random rnd = new Random();
+int randomHash = rnd.Next(slumpHash);
+
+
 string[,] xyArray= new string [height,width];
 
 int widhtMitt = width / 2;
@@ -1300,6 +1306,10 @@ void DrawBox(int height, int width)
             }
             else
             {
+                for(int s=0; s<slumpHash; s++) //hmmmm, det här blir inte rätt.
+                {
+                    xyArray[s, h] = hash;
+                }
                 xyArray[w, h] = dash;
             }
 
