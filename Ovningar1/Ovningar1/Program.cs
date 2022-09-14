@@ -1132,6 +1132,7 @@ void DrawBox(int width, int height)
 //Hint: För att flytta @ behöver du skriva ‘-’ på dess tidigare position och ‘@’ på den nya positionen.
 //Spara bredd och höjd på boxen så du vet när den ska stanna.
 
+/*
 
 Console.WriteLine("hur stor ska rutan vara? Börja med att ange bredden");
 int width = Convert.ToInt32(Console.ReadLine());
@@ -1146,6 +1147,7 @@ int atY = heightMitt;
 bool exitKey = false;
 string at = "@";
 string dash = "-";
+string hash = "#";
 
 DrawBox(width, height);
 
@@ -1161,15 +1163,15 @@ void DrawBox(int width, int height)
 
             if (h == 0 || h == height - 1 || w == 0 || w == width - 1)
             {
-                Console.Write("#");
+                Console.Write(hash);
             }
             else if (w == atX && h == atY)
             {
-                Console.Write("@");
+                Console.Write(at);
             }
             else
             {
-                Console.Write("-");
+                Console.Write(dash);
             }
 
         }
@@ -1257,94 +1259,60 @@ while (!exitKey)
     }
 }
 
+*/
+
+//21.Skriv om DrawBox så den istället returnerar en 2D-array av char
+//med tecknen som den tidigare skrev ut på displayen. Man ska också kunna mata in en tredje parameter
+//för antal slumpade ‘#’. Om man anger t.ex 5 så ska 5 stycken extra ‘#’ slumpas ut på random ställen inne i boxen.
+
+Console.WriteLine("hur stor ska rutan vara? Börja med att ange bredden");
+int width = Convert.ToInt32(Console.ReadLine());
+
+Console.WriteLine("Ange höjden");
+int height = Convert.ToInt32(Console.ReadLine());
+
+string[,] xyArray= new string [height,width];
+
+int widhtMitt = width / 2;
+int heightMitt = height / 2;
+int atX = widhtMitt;
+int atY = heightMitt;
+bool exitKey = false;
+string at = "@";
+string dash = "-";
+string hash = "#";
 
 
+DrawBox(height,width);
 
-
-
-
-/*---------------------------------------------Alternativ lösning som skriver om hela boxen------------------------------------------------------------
-
-void DrawBox(int width, int height)
+void DrawBox(int height, int width)
 {
-    while (exitKey == false)
+    Console.Clear();
+    for (int h = 0; h < height; h++)
     {
-        Console.Clear();
-        for (int h = 0; h < height; h++)
+
+        for (int w = 0; w < width; w++)
         {
 
-            for (int w = 0; w < width; w++)
+            if (h == 0 || h == height - 1 || w == 0 || w == width - 1)
             {
-
-                if (h == 0 || h == height - 1 || w == 0 || w == width - 1)
-                {
-                    Console.Write("#");
-                }
-                else if (w == atX && h == atY)
-                {
-                    Console.Write("@");
-                }
-                else
-                {
-                    Console.Write("-");
-                }
-
+                xyArray[w,h]="#";
             }
-            Console.WriteLine();
+            else if (w == atX && h == atY)
+            {
+                xyArray[w, h] = "@";
+            }
+            else
+            {
+                xyArray[w, h] = "-";
+            }
 
         }
-        var inputKey = Console.ReadKey();
+        Console.WriteLine();
+    }
 
-        switch (inputKey.Key)
-        {
-
-            case ConsoleKey.LeftArrow:
-
-                {
-                    if (atX > 1)
-                    {
-                        atX--;
-                    }
-                }
-                break;
-
-            case ConsoleKey.RightArrow:
-
-                {
-                    if (atX < width-2)
-                    {
-                        atX++;
-                    }
-                }
-                break;
-
-            case ConsoleKey.UpArrow:
-
-                {
-                    if (atY > 1)
-                    {
-                        atY--;
-                    }
-                }
-                break;
-
-            case ConsoleKey.DownArrow:
-
-                {
-                    if (atY < height-2)
-                    {
-                        atY++;
-                    }
-                }
-                break;
-
-            default:
-                {
-                    exitKey = true;
-                }
-                break;
-        }
+    foreach (string i in xyArray)
+    {
+        Console.Write(i);
     }
 }
-
-*/
