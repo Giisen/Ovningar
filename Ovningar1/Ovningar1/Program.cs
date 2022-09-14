@@ -1274,13 +1274,16 @@ int heightMitt = height / 2;
 int atX = widhtMitt;
 int atY = heightMitt;
 bool exitKey = false;
+string at = "@";
+string dash = "-";
+string hash = "#";
 
 
 DrawBox(height,width);
 
 void DrawBox(int height, int width)
 {
-    Console.Clear();
+    
     for (int h = 0; h < height; h++)
     {
 
@@ -1289,26 +1292,109 @@ void DrawBox(int height, int width)
 
             if (h == 0 || h == height - 1 || w == 0 || w == width - 1)
             {
-                xyArray[w,h]="#";
+                xyArray[w, h] = hash;
             }
             else if (w == atX && h == atY)
             {
-                xyArray[w, h] = "@";
+                xyArray[w, h] = at;
             }
             else
             {
-                xyArray[w, h] = "-";
+                xyArray[w, h] = dash;
             }
 
         }
         Console.WriteLine();
     }
-
-    for(int h = 0; h < height; h++)
+    Console.Clear();
+    for (int h = 0; h < height; h++)
     {
-        for(int w = 0; w < width; w++)
+        for (int w = 0; w < width; w++)
         {
-            Console.Write(w);
+            Console.Write(xyArray[w, h]);
         }
+        Console.WriteLine();
+    }
+
+
+    Console.CursorVisible = false; //Gömmer Cursor
+
+
+    while (!exitKey)
+    {
+        var inputKey = Console.ReadKey();
+
+        switch (inputKey.Key)
+        {
+
+            case ConsoleKey.LeftArrow:
+
+                {
+                    if (atX > 1)
+                    {
+                        Console.SetCursorPosition(atX, atY);
+                        Console.Write(dash);
+                        Console.SetCursorPosition(atX - 1, atY);
+                        Console.Write(at);
+                        Console.SetCursorPosition(0, 0);
+                        atX--;
+
+                    }
+                }
+                break;
+
+            case ConsoleKey.RightArrow:
+
+                {
+                    if (atX < width - 2)
+                    {
+                        Console.SetCursorPosition(atX, atY);
+                        Console.Write(dash);
+                        Console.SetCursorPosition(atX + 1, atY);
+                        Console.Write(at);
+                        Console.SetCursorPosition(0, 0);
+                        atX++;
+
+                    }
+                }
+                break;
+
+            case ConsoleKey.UpArrow:
+
+                {
+                    if (atY > 1)
+                    {
+                        Console.SetCursorPosition(atX, atY);
+                        Console.Write(dash);
+                        Console.SetCursorPosition(atX, atY - 1);
+                        Console.Write(at);
+                        Console.SetCursorPosition(0, 0);
+                        atY--;
+                    }
+                }
+                break;
+
+            case ConsoleKey.DownArrow:
+
+                {
+                    if (atY < height - 2)
+                    {
+                        Console.SetCursorPosition(atX, atY);
+                        Console.Write(dash);
+                        Console.SetCursorPosition(atX, atY + 1);
+                        Console.Write(at);
+                        Console.SetCursorPosition(0, 0);
+                        atY++;
+                    }
+                }
+                break;
+
+            default:
+                {
+                    exitKey = true;
+                }
+                break;
+        }
+
     }
 }
