@@ -1069,10 +1069,6 @@ foreach (string z in arr)
 
 
 
-
-
-
-
 /*
 //19.Skriv en metod DrawBox(int width, int height) När man anropar metoden ska den tömma konsolen
 och skriva ut en rektangel där de yttre tecknen består av ‘#’ och de inre av ‘-’ Exempel:
@@ -1278,9 +1274,6 @@ int heightMitt = height / 2;
 int atX = widhtMitt;
 int atY = heightMitt;
 bool exitKey = false;
-string at = "@";
-string dash = "-";
-string hash = "#";
 
 
 DrawBox(height,width);
@@ -1311,8 +1304,11 @@ void DrawBox(int height, int width)
         Console.WriteLine();
     }
 
-    foreach (string i in xyArray)
+    for(int h = 0; h < height; h++)
     {
-        Console.Write(i);
+        for(int w = 0; w < width; w++)
+        {
+            Console.Write(w);
+        }
     }
 }
