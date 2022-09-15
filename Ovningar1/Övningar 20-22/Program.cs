@@ -5,7 +5,7 @@
 //Hint: För att flytta @ behöver du skriva ‘-’ på dess tidigare position och ‘@’ på den nya positionen.
 //Spara bredd och höjd på boxen så du vet när den ska stanna.
 
-
+/*
 
 Console.WriteLine("hur stor ska rutan vara? Börja med att ange bredden");
 int width = Convert.ToInt32(Console.ReadLine());
@@ -131,8 +131,8 @@ while (!exitKey)
             break;
     }
 }
+*/
 
-/*
 
 //21.Skriv om DrawBox så den istället returnerar en 2D-array av char
 //med tecknen som den tidigare skrev ut på displayen. Man ska också kunna mata in en tredje parameter
@@ -152,6 +152,11 @@ string[,] xyArray = new string[height, width];
 int atX = width / 2; // Mitten av boxen
 int atY = height / 2; // Mitten av boxen
 bool exitKey = false;
+
+int randomWidht = 0;
+int randomHeight = 0;
+
+
 string at = "@";
 string dash = "-";
 string hash = "#";
@@ -192,8 +197,8 @@ void DrawBox(int height, int width)
     for (int s = 0; s < slumpHash; s++)
     {
         Random rnd = new Random();
-        int randomWidht = rnd.Next(1, width - 2);
-        int randomHeight = rnd.Next(1, height - 2);
+        randomWidht = rnd.Next(1, width - 2);
+        randomHeight = rnd.Next(1, height - 2);
         xyArray[randomHeight, randomWidht] = hash;
     }
 
@@ -210,24 +215,29 @@ void DrawBox(int height, int width)
         Console.WriteLine();
     }
 
-    foreach (int w in width) // Loopa genom arrayen för att kolla #?
-        if (xyArray[height - 2, width - 2] == "#") // Hitta # i arrayen och jämför med positionen för atX och atY
-        {
-            Console.WriteLine(xyArray[height, width]);
-            //exitKey = true;
-            //break;
-        }
-        else
-        {
-            Console.WriteLine("No match");
-        }
+
+
+    //if (xyArray[height - 2, width - 2] == "#") // Hitta # i arrayen och jämför med positionen för atX och atY
+    //{
+    //    Console.WriteLine(xyArray[height, width]);
+    //    //exitKey = true;
+    //    //break;
+    //}
+    //else
+    //{
+    //    Console.WriteLine("No match");
+    //}
 }
 
-/*
+
 
 while (!exitKey)
 {
-
+    if (atX==randomWidht && atY==randomHeight)
+    {
+        Console.WriteLine("You loose!!!");
+        exitKey=true;
+    }
     var inputKey = Console.ReadKey();
 
     switch (inputKey.Key)
@@ -303,5 +313,3 @@ while (!exitKey)
     }
 
 }
-}
-*/
