@@ -1,43 +1,10 @@
-﻿// Från genomgången den 2022-09-01, Niklas visar på distans.
-
-/*
-int heltal = 0; //Variabeln är deklarerad (int) och initierad (0)
-char tecken = 't'; // endast ett tecken
-double decimaltal = 0.5; //Viktigt att det är en punkt mellan
-string text = "min text";
-
-if (heltal >0)
-{
-    Console.WriteLine("heltal är stäörre än 0");
-}
-else if (decimaltal >1.0)
-{
-    Console.WriteLine("Decimaltal är större än 1.0");
-}
-else
-{
-    Console.WriteLine("Inget av ovan gick igenom");
-}
-
-for (int i = 0; i < text.Length; i++)
-{
-    if (text[i] == tecken)
-    Console.WriteLine($"Jag hittade ett '{tecken}', på plats {i}");
-}
-
-foreach (char ch in text)
-{
-    Console.WriteLine(ch);
-}
-
-*/
-
+﻿
 //-------------------------------------------------------------------------------------------Övningar----------------------------------------------------------------
 
 // 1. Skriv ett program som frågar efter användarens namn och skriver ut en hälsning på konsolen.
 // Om namnet är "David" ska det skriva ut "Hej David!"
 
-/*
+
 Console.WriteLine("Vad heter du?");
 string namn=Console.ReadLine();
 Console.WriteLine("Skriv ett tal");
@@ -48,7 +15,7 @@ for (int i = 0; i < antal; i++)
     Console.WriteLine($"Hej {namn}!");
 }
 
-*/
+
 
 /*
 // 2.Skriv ett program som frågar användaren efter ett lösenord. 
@@ -1260,6 +1227,7 @@ while (!exitKey)
 //21.Skriv om DrawBox så den istället returnerar en 2D-array av char
 //med tecknen som den tidigare skrev ut på displayen. Man ska också kunna mata in en tredje parameter
 //för antal slumpade ‘#’. Om man anger t.ex 5 så ska 5 stycken extra ‘#’ slumpas ut på random ställen inne i boxen.
+/*
 
 Console.WriteLine("hur stor ska rutan vara? Börja med att ange bredden");
 int width = Convert.ToInt32(Console.ReadLine());
