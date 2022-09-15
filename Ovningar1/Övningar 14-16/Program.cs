@@ -1,7 +1,7 @@
 ﻿
 // 14.Be användaren mata in en text. Skriv ut texten med alla vokaler ersatta med *
 
-/*
+
 Console.WriteLine("Vänligen skriv in en text:\n");
 string inputtext = Console.ReadLine();
 //var[] vokaler = new var[9] { "a", "e", "i", "o", "u", "y","å", "ä", "ö" };
@@ -11,7 +11,7 @@ string outputtext = inputtext.Replace("a", "*").Replace("e", "*").Replace("i", "
 Console.WriteLine(outputtext);
 
 Console.ReadKey();
-*/
+
 
 /*
 // Rövarspråket

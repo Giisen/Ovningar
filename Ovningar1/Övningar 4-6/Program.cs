@@ -9,7 +9,7 @@
 //innan nästa inmatning efterfrågas. Innan programmet avslutas ska man även skriva ut medelvärde av de inmatade talen.
 //Hint: TryParse()
 
-/*
+
 bool minbool =true;
 int n = 0;
 int summa = 0;
@@ -38,7 +38,7 @@ while (minbool)
         minbool=false;
     }
 }
-*/
+
 
 
 

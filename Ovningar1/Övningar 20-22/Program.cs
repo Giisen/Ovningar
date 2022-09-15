@@ -5,7 +5,7 @@
 //Hint: För att flytta @ behöver du skriva ‘-’ på dess tidigare position och ‘@’ på den nya positionen.
 //Spara bredd och höjd på boxen så du vet när den ska stanna.
 
-/*
+
 
 Console.WriteLine("hur stor ska rutan vara? Börja med att ange bredden");
 int width = Convert.ToInt32(Console.ReadLine());
@@ -132,7 +132,7 @@ while (!exitKey)
     }
 }
 
-*/
+/*
 
 //21.Skriv om DrawBox så den istället returnerar en 2D-array av char
 //med tecknen som den tidigare skrev ut på displayen. Man ska också kunna mata in en tredje parameter

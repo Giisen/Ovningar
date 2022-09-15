@@ -2,7 +2,7 @@
 // 7.Skriv ett program som ber användaren skriva in en månad. Programmet ska göra om månaden till månadens siffervärde.
 // T.ex. ska januari bli 1 och december 12. Använd switch. Alternativ: Prova även att lösa uppgiften med array och/eller enum.
 
-/*
+
 Console.WriteLine("skriv in en månad (ex: mars) och få ut numret för månaden.");
 string manadinput = Console.ReadLine();
 string manad = manadinput.ToLower();
@@ -90,7 +90,7 @@ switch (manad)
 
 }
 
-*/
+
 
 //8.Skapa ett program som skriver ut 1 på första raden, 2 på nästa, sedan 4, o.s.v (dubbelt så hög siffra för varje rad).
 //Fortsätt till du skrivit ut 16 rader.

@@ -4,7 +4,7 @@
 // Användare matar in “abcdefghijklmnopqrstuvxyz”, och sedan “defg”.
 // Programmet ska då skriva ut: abcdefghijklmnopqrstuvxyz
 
-/*
+
 string inputFull = "abcdefghijklmnopqrstuvxyz";
 string inputPart = "klmnopq";
 
@@ -43,7 +43,7 @@ Console.Write(ord1);
 Console.ResetColor();
 Console.Write(ord2);
 
-*/
+
 
 
 //18.Be användaren mata in en mening. Skriv ut det genomsnittliga antalet bokstäver i orden.
