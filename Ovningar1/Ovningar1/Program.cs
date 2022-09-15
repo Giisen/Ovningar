@@ -1269,10 +1269,6 @@ int height = Convert.ToInt32(Console.ReadLine());
 
 Console.WriteLine("Ange antalet slupade '#' inne i boxen");
 int slumpHash = Convert.ToInt32(Console.ReadLine());
-//Random rndW = new Random();
-//int randomWidht = rndW.Next(1,width-2);
-//Random rndH = new Random();
-//int randomHeight = rndH.Next(1,height-2);
 
 string[,] xyArray= new string [height,width];
 
@@ -1288,64 +1284,72 @@ DrawBox(height,width);
 
 void DrawBox(int height, int width)
 {
-   
+
     for (int h = 0; h < height; h++)
     {
-        
+
         for (int w = 0; w < width; w++)
         {
 
-            if (h == 0 || h == height-1 || w == 0 || w == width-1) //Skriv ut # i kanterna
+            if (h == 0 || h == height - 1 || w == 0 || w == width - 1) //Skriv ut # i kanterna
             {
-                xyArray[h,w] = hash;
+                xyArray[h, w] = hash;
             }
-            
+
             else if (w == atX && h == atY) // Om mitten, skriv ut@
             {
-                xyArray[h,w] = at;
+                xyArray[h, w] = at;
             }
             else
             {
-               xyArray[h,w] = dash;
+                xyArray[h, w] = dash;
             }
 
         }
 
-       Console.WriteLine();
+        Console.WriteLine();
 
-        
     }
 
     // Denna slupmar ut # inom boxen
-    for (int s = 0; s < slumpHash; s++) 
+    for (int s = 0; s < slumpHash; s++)
     {
         Random rnd = new Random();
         int randomWidht = rnd.Next(1, width - 2);
-        //Random rndH = new Random();
         int randomHeight = rnd.Next(1, height - 2);
-
         xyArray[randomHeight, randomWidht] = hash;
     }
 
     Console.CursorVisible = false; //Gömmer Cursor
 
-
     Console.Clear();
+
     for (int h = 0; h < height; h++)  //Skriver ut Arrayen
     {
         for (int w = 0; w < width; w++)
         {
-            Console.Write(xyArray[h,w]);
+            Console.Write(xyArray[h, w]);
         }
         Console.WriteLine();
     }
 
+    foreach (int w in width) // Loopa genom arrayen för att kolla #?
+    if (xyArray[height - 2, width - 2] == "#") // Hitta # i arrayen och jämför med positionen för atX och atY
+    {
+        Console.WriteLine(xyArray[height, width]);
+        //exitKey = true;
+        //break;
+    }else
+    {
+        Console.WriteLine("No match");
+    }
+}
 
-    
-
+    /*
 
     while (!exitKey)
     {
+        
         var inputKey = Console.ReadKey();
 
         switch (inputKey.Key)
@@ -1422,3 +1426,4 @@ void DrawBox(int height, int width)
 
     }
 }
+    */
