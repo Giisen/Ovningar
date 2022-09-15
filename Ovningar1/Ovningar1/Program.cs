@@ -1269,16 +1269,15 @@ int height = Convert.ToInt32(Console.ReadLine());
 
 Console.WriteLine("Ange antalet slupade '#' inne i boxen");
 int slumpHash = Convert.ToInt32(Console.ReadLine());
-Random rnd = new Random();
-int randomHash = rnd.Next(slumpHash);
-
+//Random rndW = new Random();
+//int randomWidht = rndW.Next(1,width-2);
+//Random rndH = new Random();
+//int randomHeight = rndH.Next(1,height-2);
 
 string[,] xyArray= new string [height,width];
 
-int widhtMitt = width / 2;
-int heightMitt = height / 2;
-int atX = widhtMitt;
-int atY = heightMitt;
+int atX = width / 2; // Mitten av boxen
+int atY = height / 2; // Mitten av boxen
 bool exitKey = false;
 string at = "@";
 string dash = "-";
@@ -1289,45 +1288,60 @@ DrawBox(height,width);
 
 void DrawBox(int height, int width)
 {
-    
+   
     for (int h = 0; h < height; h++)
     {
-
+        
         for (int w = 0; w < width; w++)
         {
 
-            if (h == 0 || h == height - 1 || w == 0 || w == width - 1)
+            if (h == 0 || h == height-1 || w == 0 || w == width-1) //Skriv ut # i kanterna
             {
-                xyArray[w, h] = hash;
+                xyArray[h,w] = hash;
             }
-            else if (w == atX && h == atY)
+            
+            else if (w == atX && h == atY) // Om mitten, skriv ut@
             {
-                xyArray[w, h] = at;
+                xyArray[h,w] = at;
             }
             else
             {
-                for(int s=0; s<slumpHash; s++) //hmmmm, det här blir inte rätt.
-                {
-                    xyArray[s, h] = hash;
-                }
-                xyArray[w, h] = dash;
+               xyArray[h,w] = dash;
             }
 
         }
-        Console.WriteLine();
+
+       Console.WriteLine();
+
+        
     }
+
+    // Denna slupmar ut # inom boxen
+    for (int s = 0; s < slumpHash; s++) 
+    {
+        Random rnd = new Random();
+        int randomWidht = rnd.Next(1, width - 2);
+        //Random rndH = new Random();
+        int randomHeight = rnd.Next(1, height - 2);
+
+        xyArray[randomHeight, randomWidht] = hash;
+    }
+
+    Console.CursorVisible = false; //Gömmer Cursor
+
+
     Console.Clear();
-    for (int h = 0; h < height; h++)
+    for (int h = 0; h < height; h++)  //Skriver ut Arrayen
     {
         for (int w = 0; w < width; w++)
         {
-            Console.Write(xyArray[w, h]);
+            Console.Write(xyArray[h,w]);
         }
         Console.WriteLine();
     }
 
 
-    Console.CursorVisible = false; //Gömmer Cursor
+    
 
 
     while (!exitKey)
