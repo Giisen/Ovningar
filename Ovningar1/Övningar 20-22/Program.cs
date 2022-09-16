@@ -137,6 +137,7 @@ while (!exitKey)
 //med tecknen som den tidigare skrev ut på displayen. Man ska också kunna mata in en tredje parameter
 //för antal slumpade ‘#’. Om man anger t.ex 5 så ska 5 stycken extra ‘#’ slumpas ut på random ställen inne i boxen.
 
+/*
 Console.WriteLine("hur stor ska rutan vara? Börja med att ange bredden");
 int inputwidth = Convert.ToInt32(Console.ReadLine());
 
@@ -225,9 +226,8 @@ while (!exitKey)
 
     var inputKey = Console.ReadKey();
 
-    for (int h = 0; h < inputheight; h++)  //Skriver ut Arrayen
-    {
-        for (int w = 0; w < inputwidth; w++)
+    for (int h = 0; h < inputheight - 1; h++)
+        for (int w = 0; w < inputwidth - 1; w++)
         {
             if (xyArray[h, w] == atArray[atX, atY])
             {
@@ -235,11 +235,10 @@ while (!exitKey)
             }
             else
             {
-                exitKey=true;
+                exitKey = true;
             }
         }
 
-    }
 
 
     switch (inputKey.Key)
@@ -314,4 +313,43 @@ while (!exitKey)
             break;
     }
 }
+*/
 
+//22.Skriv en funktion som kan ta ett godtyckligt antal strängar som parametrar och som returnerar den längsta av dem.
+
+
+
+List<string> stringList = new List<string>();
+List<int> lenghtList = new List<int>();
+bool strängar = true;
+
+while (strängar)
+{
+    Console.WriteLine("Vill du skriva in (ytterligare) en sträng, välj 1 om inte så välj 2");
+    string val = Console.ReadLine();
+    switch (val)
+    {
+        case "1":
+            {
+                Console.WriteLine("Skriv in din sträng");
+                stringList.Add(Console.ReadLine());
+                break;
+            }
+        default:
+            {
+                Console.WriteLine();
+                Console.WriteLine("Den längsta strängen du skriv in är:");
+                StringLenght();
+                strängar = false;
+                break;
+            }
+    }
+
+}
+
+void StringLenght()
+{
+    stringList = stringList.OrderByDescending(x => x.Length).ToList(); //Sorterar och skriver över listan
+    //stringList.OrderByDescending(x => x.Length); // Sorterar men skriver inte över listan.
+    Console.WriteLine(stringList[0]);
+}
