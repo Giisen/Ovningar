@@ -1,5 +1,4 @@
-﻿
-//20. Använd DrawBox-metoden i föregående uppgift för att rita en box.
+﻿//20. Använd DrawBox-metoden i föregående uppgift för att rita en box.
 //Placera sedan ett @ i mitten av boxen. Om man använder piltangenterna ska man kunna flytta runt @.
 //När den kommer till kanten av boxen så ska den inte kunna gå längre åt det hållet.
 //Hint: För att flytta @ behöver du skriva ‘-’ på dess tidigare position och ‘@’ på den nya positionen.
@@ -139,32 +138,32 @@ while (!exitKey)
 //för antal slumpade ‘#’. Om man anger t.ex 5 så ska 5 stycken extra ‘#’ slumpas ut på random ställen inne i boxen.
 
 Console.WriteLine("hur stor ska rutan vara? Börja med att ange bredden");
-int width = Convert.ToInt32(Console.ReadLine());
+int inputwidth = Convert.ToInt32(Console.ReadLine());
 
 Console.WriteLine("Ange höjden");
-int height = Convert.ToInt32(Console.ReadLine());
+int inputheight = Convert.ToInt32(Console.ReadLine());
 
 Console.WriteLine("Ange antalet slupade '#' inne i boxen");
 int slumpHash = Convert.ToInt32(Console.ReadLine());
 
-string[,] xyArray = new string[height, width];
+char[,] xyArray = new char[inputheight, inputwidth];
 
-int atX = width / 2; // Mitten av boxen
-int atY = height / 2; // Mitten av boxen
+int atX = inputwidth / 2; // Mitten av boxen
+int atY = inputheight / 2; // Mitten av boxen
+int[,] atArray = new int[atX, atY];
+
+//int randomWidht = 0;
+//int randomHeight = 0;
 bool exitKey = false;
 
-int randomWidht = 0;
-int randomHeight = 0;
+char at = '@';
+char dash = '-';
+char hash = '#';
 
 
-string at = "@";
-string dash = "-";
-string hash = "#";
-
-
-DrawBox(height, width);
-
-void DrawBox(int height, int width)
+DrawBox(inputheight, inputwidth); //DrawBox(height, width);
+PrintBox();
+void DrawBox(int height, int width) //void DrawBox(int height, int width)
 {
 
     for (int h = 0; h < height; h++)
@@ -193,52 +192,55 @@ void DrawBox(int height, int width)
 
     }
 
-    // Denna slupmar ut # inom boxen
+    // Denna slumpar ut # inom boxen
     for (int s = 0; s < slumpHash; s++)
     {
         Random rnd = new Random();
-        randomWidht = rnd.Next(1, width - 2);
-        randomHeight = rnd.Next(1, height - 2);
+        int randomWidht = rnd.Next(1, width - 2);
+        int randomHeight = rnd.Next(1, height - 2);
         xyArray[randomHeight, randomWidht] = hash;
     }
 
     Console.CursorVisible = false; //Gömmer Cursor
 
     Console.Clear();
-
-    for (int h = 0; h < height; h++)  //Skriver ut Arrayen
+}
+void PrintBox()
+{
+    for (int h = 0; h < inputheight; h++)  //Skriver ut Arrayen
     {
-        for (int w = 0; w < width; w++)
+        for (int w = 0; w < inputwidth; w++)
         {
             Console.Write(xyArray[h, w]);
         }
         Console.WriteLine();
     }
-
-
-
-    //if (xyArray[height - 2, width - 2] == "#") // Hitta # i arrayen och jämför med positionen för atX och atY
-    //{
-    //    Console.WriteLine(xyArray[height, width]);
-    //    //exitKey = true;
-    //    //break;
-    //}
-    //else
-    //{
-    //    Console.WriteLine("No match");
-    //}
 }
+
 
 
 
 while (!exitKey)
 {
-    if (atX==randomWidht && atY==randomHeight)
-    {
-        Console.WriteLine("You loose!!!");
-        exitKey=true;
-    }
+
     var inputKey = Console.ReadKey();
+
+    for (int h = 0; h < inputheight; h++)  //Skriver ut Arrayen
+    {
+        for (int w = 0; w < inputwidth; w++)
+        {
+            if (xyArray[h, w] == atArray[atX, atY])
+            {
+                Console.WriteLine("found match");
+            }
+            else
+            {
+                exitKey=true;
+            }
+        }
+
+    }
+
 
     switch (inputKey.Key)
     {
@@ -252,7 +254,7 @@ while (!exitKey)
                     Console.Write(dash);
                     Console.SetCursorPosition(atX - 1, atY);
                     Console.Write(at);
-                    Console.SetCursorPosition(0, 0);
+                    //Console.SetCursorPosition(0, 0);
                     atX--;
 
                 }
@@ -262,13 +264,13 @@ while (!exitKey)
         case ConsoleKey.RightArrow:
 
             {
-                if (atX < width - 2)
+                if (atX < inputwidth - 2)
                 {
                     Console.SetCursorPosition(atX, atY);
                     Console.Write(dash);
                     Console.SetCursorPosition(atX + 1, atY);
                     Console.Write(at);
-                    Console.SetCursorPosition(0, 0);
+                    //Console.SetCursorPosition(0, 0);
                     atX++;
 
                 }
@@ -284,7 +286,7 @@ while (!exitKey)
                     Console.Write(dash);
                     Console.SetCursorPosition(atX, atY - 1);
                     Console.Write(at);
-                    Console.SetCursorPosition(0, 0);
+                    //Console.SetCursorPosition(0, 0);
                     atY--;
                 }
             }
@@ -293,13 +295,13 @@ while (!exitKey)
         case ConsoleKey.DownArrow:
 
             {
-                if (atY < height - 2)
+                if (atY < inputheight - 2)
                 {
                     Console.SetCursorPosition(atX, atY);
                     Console.Write(dash);
                     Console.SetCursorPosition(atX, atY + 1);
                     Console.Write(at);
-                    Console.SetCursorPosition(0, 0);
+                    //Console.SetCursorPosition(0, 0);
                     atY++;
                 }
             }
@@ -311,5 +313,5 @@ while (!exitKey)
             }
             break;
     }
-
 }
+
