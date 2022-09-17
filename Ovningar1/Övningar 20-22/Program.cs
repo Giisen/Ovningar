@@ -147,6 +147,7 @@ int inputheight = Convert.ToInt32(Console.ReadLine());
 Console.WriteLine("Ange antalet slupade '#' inne i boxen");
 int slumpHash = Convert.ToInt32(Console.ReadLine());
 
+char[,] slumpHashArray = new char[inputheight, inputwidth]; //Denna ska sedan fyllas med #
 char[,] xyArray = new char[inputheight, inputwidth];
 
 int atX = inputwidth / 2; // Mitten av boxen
@@ -193,7 +194,7 @@ void DrawBox(int height, int width) //void DrawBox(int height, int width)
 
     }
 
-    // Denna slumpar ut # inom boxen
+    // Denna slumpar ut # inom boxen.....Här måste jag skap en ny array med dessa slumpade # för att sen jämföra om @ är samma som #
     for (int s = 0; s < slumpHash; s++)
     {
         Random rnd = new Random();
@@ -218,6 +219,20 @@ void PrintBox()
     }
 }
 
+// Skapar en ny array med bara "#"
+for (int i = 0; i < xyArray.GetLength(0) - 1; i++) //Loopa genom rader
+{
+    for (int j = 0; j < xyArray.GetLength(1) - 1; j++) //loopa genom kolumner
+    {
+        if (xyArray[i,j]==at)
+        {
+            slumpHashArray[i,j] = at;
+            
+        }
+        
+    }
+}
+
 
 
 
@@ -226,17 +241,18 @@ while (!exitKey)
 
     var inputKey = Console.ReadKey();
 
-    for (int i = 0; i < xyArray.GetLength(0) - 1; i++) //Loopa genom rader
+    for (int i = 0; i < slumpHashArray.GetLength(0) - 1; i++) //Loopa genom rader
     {
-        for (int j = 0; j < xyArray.GetLength(1) - 1; j++) //loopa genom kolumner
+        for (int j = 0; j < slumpHashArray.GetLength(1) - 1; j++) //loopa genom kolumner
         {
             if (i == atX && j == atY)
             {
                 Console.WriteLine("found match");
+                exitKey = true;
             }
             else
             {
-                exitKey = true;
+                break;
             }
         }
     }
