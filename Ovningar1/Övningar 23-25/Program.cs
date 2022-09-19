@@ -463,7 +463,6 @@ for (int j = 0; j < h; j++)
 }
 */
 
-
 /*
 k.
 ##--##--##--##--
@@ -472,4 +471,83 @@ wwwwww~~~~~~~~~~
 ################
 */
 
+int h = 4;
+int w = 16;
+string hash = "#";
+int hashindex = 0;
+int hashindex2 = 1;
+string www = "w";
+string wave = "~";
+string dash = "-";
 
+for (int j = 0; j < h; j++)
+{
+    if (j < 2)
+    {
+
+
+        for (int i = 0; i < w; i++)
+        {
+            
+            if (i == hashindex || i == hashindex + 1)
+            {
+                Console.Write(hash);
+                hashindex = hashindex + 2;
+            }
+            else
+            {
+                Console.Write(dash);
+            }
+            
+        }
+       
+
+        //for (int i = 0; i < w; i++)
+        //{
+        //    if (i == hashindex)
+        //    {
+        //        Console.Write(hash);
+        //        hashindex=hashindex+3;
+                
+        //    }
+        //    else if(i==hashindex2)
+        //    {
+        //        Console.Write(hash);
+        //        //hashindex2 = hashindex2 + 2;
+        //    }
+        //    else
+        //    {
+        //        Console.Write(dash);
+        //    }
+        //    //hashindex=hashindex+2;
+        //    //hashindex2=hashindex2+2;
+        //}
+    }
+    else if (j > 2)
+    {
+        for (int i = 0; i < w; i++)
+        {
+            
+            {
+                Console.Write(hash);
+            }
+        }
+
+    }
+    else
+    {
+        for (int i = 0; i < w; i++)
+        {
+            if (i <6)
+            {
+                Console.Write(www);
+            }
+            else
+            {
+                Console.Write(wave);
+            }
+        }
+    }
+
+    Console.WriteLine();
+}
