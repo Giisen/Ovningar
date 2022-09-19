@@ -18,7 +18,13 @@ void IndexOfAll(string text, char c)
         {
             
             result =i++;
-            //int[] index = new int[] {result};
+            int[] index = new int[] { result };
+
+
+            foreach (int x in index)
+            {
+                Console.Write(x + " ");
+            }
 
 
             //string stringResult = result.ToString();
@@ -28,13 +34,6 @@ void IndexOfAll(string text, char c)
             //Console.WriteLine(result); //Denna funkar
         }
         //Console.WriteLine(text[i]);
-    }
-
-    int[] index = new int[] { result };
-
-    foreach (int i in index)
-    {
-        Console.Write(i+" ");
     }
 
 }
