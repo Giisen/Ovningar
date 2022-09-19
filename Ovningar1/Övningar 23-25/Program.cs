@@ -5,7 +5,7 @@ Console.WriteLine("Skriv in en text");
 string text =Console.ReadLine();
 char c = 'c';
 //int index =;
-int result =-1;
+int result =0;
 IndexOfAll(text, c);
 
 //int[] ints = new int[text.Length] {IndexOfAll()};
@@ -18,7 +18,7 @@ void IndexOfAll(string text, char c)
         {
             
             result =i++;
-            int[] index = new int[] {result};
+            //int[] index = new int[] {result};
 
 
             //string stringResult = result.ToString();
@@ -30,9 +30,11 @@ void IndexOfAll(string text, char c)
         //Console.WriteLine(text[i]);
     }
 
-    foreach(int i in index)
+    int[] index = new int[] { result };
+
+    foreach (int i in index)
     {
-        Console.WriteLine(i);
+        Console.Write(i+" ");
     }
 
 }
