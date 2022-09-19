@@ -34,9 +34,32 @@ a.
 -#------
 --#-----
 ---#----
+*/
 
+int h = 4;
+int w = 8;
+string hash = "#";
+int dashindex = 0;
+string dash = "-";
 
+for (int j = 0; j < h; j++)
+{
+    for (int i = 0; i < w; i++)
+    {
+        if (i==dashindex)
+        {
+            Console.Write(hash);
+        }
+        else
+        {
+            Console.Write(dash);
+        }
+     }
+    Console.WriteLine();
+    dashindex++;    
+}
 
+/*
 b.
 #---#---
 -#---#--
