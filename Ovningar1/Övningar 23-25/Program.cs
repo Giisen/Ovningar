@@ -217,7 +217,7 @@ string dash = "-";
 
 for (int j = 0; j < h; j++)
 {
-    if (j % 1 == 0)
+    if (j % 2 == 0)
     {
 
         for (int i = 0; i < w; i++)
@@ -234,11 +234,11 @@ for (int j = 0; j < h; j++)
         //Console.WriteLine();
         //hashindex++;
     }
-    else if (j % 1 == 1)
+    else if (j % 2 == 1)
 
-        for (int i = 1; i < w; i++)
+        for (int i = 0; i < w; i++)
         {
-            if (i == hashindex || i == hashindex + 2)
+            if (i == hashindex+1 || i == hashindex + 3)
             {
                 Console.Write(hash);
             }
