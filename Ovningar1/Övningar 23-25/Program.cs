@@ -346,7 +346,7 @@ i.
 ---- -
 --#--
 --#--
-*/
+
 int h = 4;
 int w = 5;
 string hash = "#";
@@ -383,7 +383,7 @@ for (int j = 0; j < h; j++)
     }
     Console.WriteLine();
 }
-
+*/
 
 /*
 j.
@@ -392,12 +392,84 @@ j.
 --o--
 -#-#-
 #---#
+
+int h = 5;
+int w = 5;
+string hash = "#";
+int hashindex = 0;
+int hashindex2 = w-1;
+
+string dash = "-";
+
+for (int j = 0; j < h; j++)
+{
+    if (j < 2)
+    {
+
+        for (int i = 0; i < w; i++)
+        {
+            if (i == hashindex || i==hashindex2)
+            {
+                Console.Write(hash);
+                
+            }
+            else
+            {
+                Console.Write(dash);
+            }
+            
+        }
+        hashindex++;
+        hashindex2--;
+
+    }
+    
+
+    else if (j > 2)
+    {
+        hashindex--;
+        hashindex2++;
+        for (int i = 0; i < w; i++)
+        {
+            if (i == hashindex || i == hashindex2)
+            {
+                Console.Write(hash);
+                
+            }
+            else
+            {
+                Console.Write(dash);
+            }
+
+        }
+       
+    }
+    else
+    {
+        for (int i = 0; i < w; i++)
+        {
+            if (i == w / 2)
+            {
+                Console.Write("o");
+            }
+            else 
+            { 
+                Console.Write(dash); 
+            }
+        }
+    }
+    
+    Console.WriteLine();
+}
+*/
+
+
+/*
 k.
 ##--##--##--##--
 ##--##--##--##--
 wwwwww~~~~~~~~~~
 ################
-
 */
 
 
