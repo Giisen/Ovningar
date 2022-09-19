@@ -257,7 +257,7 @@ g.
 ###---
 ###---
 ------
-*/
+
 
 int h = 4;
 int w = 6;
@@ -280,18 +280,69 @@ for (int j = 0; j < h; j++)
         }
     }
 
-
     Console.WriteLine();
 }
 
-
+*/
 
 /*
 h.
 --#--##
--- -#-##
+---#-##
 ----#--
 -----#-
+*/
+
+
+int h = 4;
+int w = 7;
+string hash = "#";
+int hashindex = 2;
+int hashindex2 = 5;
+
+string dash = "-";
+
+for (int j = 0; j < h; j++)
+{
+    if (j < 2)
+    {
+
+        for (int i = 0; i < w; i++)
+        {
+            if (i == hashindex || i == hashindex2 || i==hashindex2+1)
+            {
+                Console.Write(hash);
+            }
+            else
+            {
+                Console.Write(dash);
+            }
+        }
+        
+        hashindex++;
+    }
+    else if (j > 1)
+    {
+
+        for (int i = 0; i < w; i++)
+        {
+            if (i == hashindex)
+            {
+                Console.Write(hash);
+            }
+            else
+            {
+                Console.Write(dash);
+            }
+
+        }
+        hashindex++;
+    }
+    Console.WriteLine();
+}
+
+
+/*
 i.
 --#--
 ---- -
