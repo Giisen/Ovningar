@@ -1,12 +1,11 @@
 ﻿//23. Skapa en metod int[] IndexOfAll(string text, char c)
 //som söker igenom strängen text och returnerar en int[] med index till alla förekomster av c i text.
-
+/*
 Console.WriteLine("Skriv in en text");
 string text =Console.ReadLine();
 char c = 'c';
 
 IndexOfAll(text, c);
-
 
 void IndexOfAll(string text, char c)
 {
@@ -14,8 +13,7 @@ void IndexOfAll(string text, char c)
     {
         if (text[i] == c)
         {
-           
-            int[] index = new int[] {i};
+           int[] index = new int[] {i};
 
             foreach (int x in index)
             {
@@ -27,6 +25,71 @@ void IndexOfAll(string text, char c)
     }
 
 }
+*/
 
+//24.Skriv ett program som skriver ut följande rektanglar på konsolen med hjälp av loopar:
+/*
+a.
+#-------
+-#------
+--#-----
+---#----
+
+
+
+b.
+#---#---
+-#---#--
+--#---#-
+---#---#
+c.
+##------
+--##----
+----##--
+------##
+d.
+--#--#--
+--#--#--
+########
+--#--#--
+e.
+#---#---
+-#-#----
+--#-----
+-#-#----
+f.
+#-#-
+-#-#
+#-#-
+-#-#
+g.
+###---
+###---
+###---
+------
+
+h.
+--#--##
+-- -#-##
+----#--
+-----#-
+i.
+--#--
+---- -
+--#--
+--#--
+j.
+#---#
+-#-#-
+--o--
+-#-#-
+#---#
+k.
+##--##--##--##--
+##--##--##--##--
+wwwwww~~~~~~~~~~
+################
+
+*/
 
 
