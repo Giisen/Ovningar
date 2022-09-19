@@ -4,11 +4,9 @@
 Console.WriteLine("Skriv in en text");
 string text =Console.ReadLine();
 char c = 'c';
-//int index =;
-int result =0;
+
 IndexOfAll(text, c);
 
-//int[] ints = new int[text.Length] {IndexOfAll()};
 
 void IndexOfAll(string text, char c)
 {
@@ -17,23 +15,16 @@ void IndexOfAll(string text, char c)
         if (text[i] == c)
         {
             
-            result =i++;
+            int result =i++;
             int[] index = new int[] { result };
-
 
             foreach (int x in index)
             {
-                Console.Write(x + " ");
+                Console.Write(x);
             }
 
-
-            //string stringResult = result.ToString();
-            //stringResult.ToArray();
-            //int[] index=new int[i] {i};
-            //return i;
-            //Console.WriteLine(result); //Denna funkar
         }
-        //Console.WriteLine(text[i]);
+       
     }
 
 }
