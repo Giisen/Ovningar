@@ -99,8 +99,6 @@ c.
 --##----
 ----##--
 ------##
-*/
-
 
 
 int h = 4;
@@ -125,14 +123,48 @@ for (int j = 0; j < h; j++)
     Console.WriteLine();
     hashindex=hashindex+2;    
 }
+*/
+
 /*
-
-
 d.
 --#--#--
 --#--#--
 ########
 --#--#--
+*/
+
+int h = 4;
+int w = 8;
+string hash = "#";
+int hashindex = 2;
+string dash = "-";
+
+for (int j = 0; j < h; j++)
+{
+    
+    for (int i = 0; i < w; i++)
+    {
+        if(j == 2)
+        {
+            Console.Write(hash);
+        }
+        else if (i == hashindex || i == hashindex + 3)
+        {
+            Console.Write(hash);
+        }
+        else
+        {
+            Console.Write(dash);
+        }
+    }
+    Console.WriteLine();
+    //hashindex = hashindex + 2;
+}
+
+
+
+
+/*
 e.
 #---#---
 -#-#----
