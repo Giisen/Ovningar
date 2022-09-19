@@ -14,9 +14,8 @@ void IndexOfAll(string text, char c)
     {
         if (text[i] == c)
         {
-            
-            int result =i++;
-            int[] index = new int[] { result };
+           
+            int[] index = new int[] {i};
 
             foreach (int x in index)
             {
