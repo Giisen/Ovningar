@@ -206,7 +206,8 @@ f.
 -#-#
 #-#-
 -#-#
-*/
+
+
 
 int h = 4;
 int w = 4;
@@ -231,14 +232,12 @@ for (int j = 0; j < h; j++)
                 Console.Write(dash);
             }
         }
-        //Console.WriteLine();
-        //hashindex++;
     }
     else if (j % 2 == 1)
 
         for (int i = 0; i < w; i++)
         {
-            if (i == hashindex+1 || i == hashindex + 3)
+            if(i%2==1)
             {
                 Console.Write(hash);
             }
@@ -248,8 +247,8 @@ for (int j = 0; j < h; j++)
             }
         }
     Console.WriteLine();
-    //hashindex++;
-}
+ }
+*/
 
 
 /*
@@ -258,7 +257,36 @@ g.
 ###---
 ###---
 ------
+*/
 
+int h = 4;
+int w = 6;
+string hash = "#";
+int hashindex = 0;
+
+string dash = "-";
+
+for (int j = 0; j < h; j++)
+{
+    for (int i = 0; i < w; i++)
+    {
+        if (j < 3 && i < 3)
+        {
+            Console.Write(hash);
+        }
+        else
+        {
+            Console.Write(dash);
+        }
+    }
+
+
+    Console.WriteLine();
+}
+
+
+
+/*
 h.
 --#--##
 -- -#-##
