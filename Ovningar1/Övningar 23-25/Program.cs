@@ -19,7 +19,7 @@ void IndexOfAll(string text, char c)
 
             foreach (int x in index)
             {
-                Console.Write(x);
+                Console.Write(x+" ");
             }
 
         }
