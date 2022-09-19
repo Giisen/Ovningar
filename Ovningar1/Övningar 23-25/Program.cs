@@ -492,7 +492,7 @@ for (int j = 0; j < h; j++)
             if (i == hashindex || i == hashindex + 1)
             {
                 Console.Write(hash);
-                hashindex = hashindex + 2;
+
             }
             else
             {
@@ -500,7 +500,7 @@ for (int j = 0; j < h; j++)
             }
             
         }
-       
+
 
         //for (int i = 0; i < w; i++)
         //{
@@ -508,7 +508,7 @@ for (int j = 0; j < h; j++)
         //    {
         //        Console.Write(hash);
         //        hashindex=hashindex+3;
-                
+
         //    }
         //    else if(i==hashindex2)
         //    {
