@@ -291,7 +291,6 @@ h.
 ---#-##
 ----#--
 -----#-
-*/
 
 
 int h = 4;
@@ -319,7 +318,6 @@ for (int j = 0; j < h; j++)
             }
         }
         
-        hashindex++;
     }
     else if (j > 1)
     {
@@ -336,11 +334,11 @@ for (int j = 0; j < h; j++)
             }
 
         }
-        hashindex++;
     }
+    hashindex++;
     Console.WriteLine();
 }
-
+*/
 
 /*
 i.
@@ -348,6 +346,46 @@ i.
 ---- -
 --#--
 --#--
+*/
+int h = 4;
+int w = 5;
+string hash = "#";
+int hashindex = 2;
+int hashindex2 = 5;
+
+string dash = "-";
+
+for (int j = 0; j < h; j++)
+{
+    if (j != 1)
+    {
+
+        for (int i = 0; i < w; i++)
+        {
+            if (i == w / 2)
+            {
+                Console.Write(hash);
+            }
+            else
+            {
+                Console.Write(dash);
+            }
+        }
+
+    }
+    else
+    {
+        for (int i = 0; i < w; i++)
+        {
+            Console.Write(dash);
+        }
+
+    }
+    Console.WriteLine();
+}
+
+
+/*
 j.
 #---#
 -#-#-
