@@ -52,6 +52,7 @@ switch (val)
         {
             Console.WriteLine("Skriv in Red:");
             string redString = Console.ReadLine();
+            Console.WriteLine();
             Red = float.Parse(redString);
             break;
         }
@@ -60,6 +61,7 @@ switch (val)
         {
             Console.WriteLine("Skriv in Blue:");
             string blueString = Console.ReadLine();
+            Console.WriteLine();
             Blue = float.Parse(blueString);
             break;
         }
@@ -80,7 +82,7 @@ public class GetHundred
     public float Red { get { return _red; } set { _red = value; } }
     public float Blue { get { return _blue; } set { _blue = value; } }
 
-    public void ReturnHundred(float red, float blue)
+    public void ReturnHundred(float Red, float Blue)
     {
 
         if (Red > 0)
