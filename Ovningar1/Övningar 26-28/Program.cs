@@ -17,9 +17,10 @@ Console.WriteLine(mySteps.Steps);
 public class StepCount
 {
     private int _Steps=0;
-    public int Steps { get { return _Steps; } }
+    public int Steps { get {  return _Steps; } set { _Steps=value; } }
+ //public string Model { get { return _model; } set { _model = value; } }
 
-    public int Step()
+public int Step()
     {
         return Steps++;
     }
