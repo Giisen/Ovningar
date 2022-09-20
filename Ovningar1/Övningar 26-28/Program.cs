@@ -46,7 +46,7 @@ string val = Console.ReadLine();
 float Blue = 0.0F;
 float Red = 0.0F;
 
-switch(val)
+switch (val)
 {
     case "1":
         {
@@ -65,17 +65,11 @@ switch(val)
         }
 }
 
-//Console.WriteLine("Skriv in Red:");
-//string redString = Console.ReadLine();
-//float Red = float.Parse(redString);
-//Console.WriteLine("Skriv in Blue:");
-//string blueString = Console.ReadLine();
-//float Blue = float.Parse(blueString);
-
 
 GetHundred test = new GetHundred();
 test.Blue = Blue;
 test.Red = Red;
+
 test.ReturnHundred(Red,Blue);
 
 public class GetHundred
@@ -88,21 +82,16 @@ public class GetHundred
 
     public void ReturnHundred(float red, float blue)
     {
-        //float hundred = 100.0F;
-        //float tempRed = hundred-Blue;
-        //float tempBlue = hundred-Red;
 
         if (Red > 0)
         {
             Blue = 100.0F - Red;
             Console.WriteLine($"Blue är: {Blue}");
-            //return _blue;
         }
-        else //if (Blue > 0)
+        else
         {
             Red = 100.0F - Blue;
             Console.WriteLine($"Red är: {Red}");
-            //return _red;
         }
 
         
