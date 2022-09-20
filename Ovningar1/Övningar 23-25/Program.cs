@@ -469,7 +469,7 @@ k.
 ##--##--##--##--
 wwwwww~~~~~~~~~~
 ################
-*/
+
 
 int h = 4;
 int w = 16;
@@ -558,5 +558,64 @@ for (int j = 0; j < h; j++)
 //Skapa publika properties för att hämta eller ändra värdet på varje field.
 //Skriv en konstruktor till bilklassen som inte tar några parametrar.
 //Skriv en till konstruktor som tar en parameter för varje property som klassen har.
-//Hur kan man styra vilken konstruktor som anropas när man skapar ett objekt av klassen?
+//Hur kan man styra vilken konstruktor som anropas när man skapar ett objekt av klassen? Namnet på kontruktorn? bil VS Bil
 //Skriv en metod till bilklassen med namnet HalfPrice. När den anropas ska priset på bilen sänkas till hälften.
+
+//public class Player
+//{
+//    private string _name;
+//    public string Name
+//    {
+
+//        get { return _name; }
+//        set { _name = value; }
+
+//    }
+
+//Player krister = new Player(); //instatierar en ny player Krister.
+//krister.Alive = true;
+//krister.Name = "Krister";
+//krister.Level = 1;
+
+
+
+
+Car polestar = new Car();
+
+polestar.Price = 100;
+
+polestar.HalfPrice();
+Console.WriteLine(polestar.Price);
+
+
+
+public class Car
+{
+    private string _model;
+    public string Model { get { return _model; } set { _model = value; } }
+
+    private int _price;
+    public int Price { get { return _price; } set { _price = value; } }
+
+    private string _color;
+    public string color { get { return _color; } set { _color = value; } }
+
+    struct bilar { };
+
+    struct Bilar 
+    {
+    public string Model;
+    public string Price;
+    public string Color;
+    };
+
+    public int HalfPrice() //Ger ett nytt Price (hälften), denna ersätter tidigare _price.
+    {
+        Price = Price / 2;
+        return Price;
+    }
+
+}
+
+
+
