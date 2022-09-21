@@ -18,7 +18,7 @@ public class StepCount
 {
     private int _Steps=0;
     public int Steps { get {  return _Steps; } set { _Steps=value; } }
- //public string Model { get { return _model; } set { _model = value; } }
+ 
 
 public int Step()
     {
@@ -37,9 +37,7 @@ public int Step()
 //27.Skapa en en klass som har en property “red” och en property “blue”. Båda ska vara en float och kunna ha ett värde mellan 0.0 och 100.0
 //men de ska vara “sammankopplade” på så vis att värdena tillsammans alltid är 100.0
 //d.v.s om man t.ex. sätter “blue” till 8.5 och sedan läser av “red” så ska den returnera 91.5
-
-
-
+/*
 Console.WriteLine("Välj 1 för att ange värde för Red, välj 2 för att ange värde för Blue:");
 string val = Console.ReadLine();
 
@@ -99,3 +97,12 @@ public class GetHundred
         
     }    
 }
+*/
+
+//28.Skapa klassen “Person”, med properties “FirstName”,
+//“LastName” och “Name”. Om man ändrar någon av dem, så ska man få ut rätt värden när man läser av de andra.
+//Använd en konstruktor som tar parametrar “firstName” och “lastName” när man instansierar objekten.
+//(I en första enklare version så kan Name vara read-only).
+//Ex1. Person p = new Person(“Anna”, “Berg”); // => p.Name == “Anna Berg”
+//Ex2. p.Name = “Per Lind”; // => p.FirstName == “Per”, p.LastName == “Lind”
+
