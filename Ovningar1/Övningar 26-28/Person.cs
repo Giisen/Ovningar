@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Övningar_26_28
 {
-
+   
 
     public class Person
     {
@@ -16,26 +16,25 @@ namespace Övningar_26_28
         {
             get { return _FirstName; } set { _FirstName = value; }
         }
+
         private string _LastName;
-        public string LastName { get { return _LastName; } set { _LastName = value; } }
-
-        private string _Name;
-        
-        public string Name
+        public string LastName
         {
-            readonly get => _Name; 
-            set =>  _Name = value; 
-        }
-        
-
-        public string FullName(string firstname, string lastName)
-        {
-            string Name = firstname + " " + lastName;
-            return Name;
+            get { return _LastName; } set { _LastName = value; }
         }
 
-
+        //public string Name { get; init; }
     }
 
-   
+    public readonly struct FullName
+    {
+        public readonly string Name;
+
+        public FullName(string FirstName, string LastName)
+        {
+            Name = FirstName + " " + LastName;
+            
+        }
+    }
 }
+

@@ -106,3 +106,10 @@ public class GetHundred
 //Ex1. Person p = new Person(“Anna”, “Berg”); // => p.Name == “Anna Berg”
 //Ex2. p.Name = “Per Lind”; // => p.FirstName == “Per”, p.LastName == “Lind”
 
+using Övningar_26_28;
+
+Person testPerson1 = new Person("Krister", "Ekelund");
+//testPerson1.FirstName = "Krister";
+//testPerson1.LastName = "Ekelund";
+Console.WriteLine(testPerson1.FullName);
+
