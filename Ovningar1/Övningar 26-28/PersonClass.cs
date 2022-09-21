@@ -23,7 +23,17 @@ namespace Övningar_26_28
             get { return _LastName; } set { _LastName = value; }
         }
 
-       //public string Name { get; init; }
+
+        public readonly string Name;
+
+        public readonly struct FullName
+        {
+            public readonly string Name;
+            public FullName(string firstname, string lastname)
+            {
+                Name = firstname + " " + lastname;
+            }
+        }
     }
 
 }

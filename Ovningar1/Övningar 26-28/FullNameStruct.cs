@@ -7,14 +7,12 @@ using System.Threading.Tasks;
 namespace Övningar_26_28
 {
 
-    public readonly struct FullNameStruct
-    {
-        public readonly string Name;
-
-        public FullNameStruct(string FirstName, string LastName)
-        {
-            Name = (FirstName + " " + LastName);
-
-        }
-    }
+    //public readonly struct FullName
+    //{
+    //    public readonly string Name;
+    //    public FullName(string firstname, string lastname)
+    //    {
+    //        Name = firstname + " " + lastname;
+    //    }
+    //}
 }
