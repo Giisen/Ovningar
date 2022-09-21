@@ -11,6 +11,7 @@ namespace Övningar_26_28
 
     public class PersonClass
     {
+
         private string _FirstName;
         public string FirstName
         {
@@ -23,20 +24,30 @@ namespace Övningar_26_28
             get { return _LastName; } set { _LastName = value; }
         }
 
-
-        public readonly string Name;
-
-        public readonly struct FullName
+        private string _Name;
+        public string Name
         {
-            public readonly string Name;
-            public FullName(string firstname, string lastname)
-            {
-                Name = firstname + " " + lastname;
-            }
+            get { return _Name; } set { _Name = value; } 
         }
-    }
 
+            public PersonClass(string firstname, string lastname)
+            {
+                FirstName = firstname;
+                LastName = lastname;
+            }
+
+
+        public string NameStruct()
+        {
+            string Name = FirstName + LastName;
+            return Name;
+
+        }
+
+    }
 }
+
+
 
 //public readonly struct Carstruct
 //{
