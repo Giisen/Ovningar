@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Övningar_26_28
 {
-   
+
 
     public class PersonClass
     {
@@ -15,46 +15,35 @@ namespace Övningar_26_28
         private string _FirstName;
         public string FirstName
         {
-            get { return _FirstName; } set { _FirstName = value; }
+            get { return _FirstName; }
+            set { _FirstName = value; }
         }
 
         private string _LastName;
         public string LastName
         {
-            get { return _LastName; } set { _LastName = value; }
+            get { return _LastName; }
+            set { _LastName = value; }
         }
 
         private string _Name;
         public string Name
         {
-            get { return _Name; } set { _Name = value; } 
+            get { return _Name; }
+            set { _Name = value; }
         }
 
-            public PersonClass(string firstname, string lastname)
-            {
-                FirstName = firstname;
-                LastName = lastname;
-            }
-
-
-        public string NameStruct()
+        public PersonClass(string firstname, string lastname)
         {
-            string Name = FirstName + LastName;
-            return Name;
-
+            FirstName = firstname;
+            LastName = lastname;
         }
 
+        public PersonClass()
+        {
+            _Name = FirstName + " " + LastName;
+            
+
+        }
     }
 }
-
-
-
-//public readonly struct Carstruct
-//{
-//    public readonly int TopSpeed;
-
-//    public Carstruct(int topSpeed)
-//    {
-//        TopSpeed = topSpeed;
-//    }
-//}
