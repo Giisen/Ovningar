@@ -26,6 +26,9 @@ namespace Övningar_26_28
             set { _LastName = value; }
         }
 
+
+        //public string _Name { get; set; }
+
         private string _Name;
         public string Name
         {
@@ -33,17 +36,11 @@ namespace Övningar_26_28
             set { _Name = value; }
         }
 
-        public PersonClass(string firstname, string lastname)
+        public PersonClass(string firstname, string lastname) //Denna för att instatiera direkt när jag skapar ett nytt objekt.
         {
             FirstName = firstname;
             LastName = lastname;
         }
 
-        public PersonClass()
-        {
-            _Name = FirstName + " " + LastName;
-            
-
         }
-    }
 }

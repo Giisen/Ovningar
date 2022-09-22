@@ -558,7 +558,7 @@ for (int j = 0; j < h; j++)
 //Skapa publika properties för att hämta eller ändra värdet på varje field.
 //Skriv en konstruktor till bilklassen som inte tar några parametrar.
 //Skriv en till konstruktor som tar en parameter för varje property som klassen har.
-//Hur kan man styra vilken konstruktor som anropas när man skapar ett objekt av klassen? Namnet på kontruktorn? bil VS Bil
+//Hur kan man styra vilken konstruktor som anropas när man skapar ett objekt av klassen? Väljs beroende på hur många argument som anges
 //Skriv en metod till bilklassen med namnet HalfPrice. När den anropas ska priset på bilen sänkas till hälften.
 
 //public class Player
@@ -580,9 +580,9 @@ for (int j = 0; j < h; j++)
 
 
 
-Car polestar = new Car();
+Car polestar = new Car("polestar", 100, "white");
 
-polestar.Price = 100;
+//polestar.Price = 100;
 
 polestar.HalfPrice();
 Console.WriteLine(polestar.Price);
@@ -598,16 +598,19 @@ public class Car
     public int Price { get { return _price; } set { _price = value; } }
 
     private string _color;
-    public string color { get { return _color; } set { _color = value; } }
+    public string Color { get { return _color; } set { _color = value; } }
 
-    struct bilar { };
-
-    struct Bilar 
+    public Car()
     {
-    public string Model;
-    public string Price;
-    public string Color;
-    };
+
+    }
+
+    public Car(string model, int price, string color) 
+    {
+    Model=model;
+    Price=price;
+    Color=color;
+    }
 
     public int HalfPrice() //Ger ett nytt Price (hälften), denna ersätter tidigare _price.
     {

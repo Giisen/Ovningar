@@ -109,5 +109,8 @@ public class GetHundred
 using Övningar_26_28;
 
 PersonClass testPerson1 = new PersonClass("Krister","Ekelund");
+
 Console.WriteLine(testPerson1.Name);
+Console.WriteLine(testPerson1.FirstName);
+Console.WriteLine(testPerson1.LastName);
 
