@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
@@ -26,15 +27,14 @@ namespace Övningar_26_28
             set { _LastName = value; }
         }
 
+        public string Name { get; set; }
 
-        //public string _Name { get; set; }
-
-        private string _Name;
-        public string Name
-        {
-            get { return _Name; }
-            set { _Name = value; }
-        }
+        //private string _Name;
+        //public string Name
+        //{
+        //    get { return _Name; }
+        //    set { _Name = value; }
+        //}
 
         public PersonClass(string firstname, string lastname) //Denna för att instatiera direkt när jag skapar ett nytt objekt.
         {
@@ -42,5 +42,11 @@ namespace Övningar_26_28
             LastName = lastname;
         }
 
+        public string FullName()
+        {
+            Name = FirstName + " " + LastName;
+            return Name;
         }
+
+    }
 }
