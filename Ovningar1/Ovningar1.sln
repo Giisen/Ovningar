@@ -19,7 +19,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Övningar 20-22", "Övninga
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Övningar 23-25", "Övningar 23-25\Övningar 23-25.csproj", "{D71FE9C1-470D-485A-A9E2-2FF98A2405F1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Övningar 26-28", "Övningar 26-28\Övningar 26-28.csproj", "{7F59ABAD-2CE3-4621-9D64-AE344E3D1D13}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Övningar 26-28", "Övningar 26-28\Övningar 26-28.csproj", "{7F59ABAD-2CE3-4621-9D64-AE344E3D1D13}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Övningar 29-30", "Övningar 29-30\Övningar 29-30.csproj", "{E1DF7F63-5D99-47BB-9F54-02D924E9D96E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -63,6 +65,10 @@ Global
 		{7F59ABAD-2CE3-4621-9D64-AE344E3D1D13}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7F59ABAD-2CE3-4621-9D64-AE344E3D1D13}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7F59ABAD-2CE3-4621-9D64-AE344E3D1D13}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E1DF7F63-5D99-47BB-9F54-02D924E9D96E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E1DF7F63-5D99-47BB-9F54-02D924E9D96E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E1DF7F63-5D99-47BB-9F54-02D924E9D96E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E1DF7F63-5D99-47BB-9F54-02D924E9D96E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

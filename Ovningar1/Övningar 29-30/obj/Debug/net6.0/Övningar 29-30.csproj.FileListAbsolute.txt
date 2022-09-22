@@ -1,0 +1,15 @@
+C:\Users\krist\Documents\GitHub\Ovningar1\Ovningar1\Övningar 29-30\obj\Debug\net6.0\Övningar 29-30.csproj.AssemblyReference.cache
+C:\Users\krist\Documents\GitHub\Ovningar1\Ovningar1\Övningar 29-30\obj\Debug\net6.0\Övningar 29-30.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\krist\Documents\GitHub\Ovningar1\Ovningar1\Övningar 29-30\obj\Debug\net6.0\Övningar 29-30.AssemblyInfoInputs.cache
+C:\Users\krist\Documents\GitHub\Ovningar1\Ovningar1\Övningar 29-30\obj\Debug\net6.0\Övningar 29-30.AssemblyInfo.cs
+C:\Users\krist\Documents\GitHub\Ovningar1\Ovningar1\Övningar 29-30\obj\Debug\net6.0\Övningar 29-30.csproj.CoreCompileInputs.cache
+C:\Users\krist\Documents\GitHub\Ovningar1\Ovningar1\Övningar 29-30\bin\Debug\net6.0\Övningar 29-30.exe
+C:\Users\krist\Documents\GitHub\Ovningar1\Ovningar1\Övningar 29-30\bin\Debug\net6.0\Övningar 29-30.deps.json
+C:\Users\krist\Documents\GitHub\Ovningar1\Ovningar1\Övningar 29-30\bin\Debug\net6.0\Övningar 29-30.runtimeconfig.json
+C:\Users\krist\Documents\GitHub\Ovningar1\Ovningar1\Övningar 29-30\bin\Debug\net6.0\Övningar 29-30.dll
+C:\Users\krist\Documents\GitHub\Ovningar1\Ovningar1\Övningar 29-30\bin\Debug\net6.0\Övningar 29-30.pdb
+C:\Users\krist\Documents\GitHub\Ovningar1\Ovningar1\Övningar 29-30\obj\Debug\net6.0\Övningar 29-30.dll
+C:\Users\krist\Documents\GitHub\Ovningar1\Ovningar1\Övningar 29-30\obj\Debug\net6.0\refint\Övningar 29-30.dll
+C:\Users\krist\Documents\GitHub\Ovningar1\Ovningar1\Övningar 29-30\obj\Debug\net6.0\Övningar 29-30.pdb
+C:\Users\krist\Documents\GitHub\Ovningar1\Ovningar1\Övningar 29-30\obj\Debug\net6.0\Övningar 29-30.genruntimeconfig.cache
+C:\Users\krist\Documents\GitHub\Ovningar1\Ovningar1\Övningar 29-30\obj\Debug\net6.0\ref\Övningar 29-30.dll
