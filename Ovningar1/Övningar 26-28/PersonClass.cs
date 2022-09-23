@@ -27,26 +27,34 @@ namespace Övningar_26_28
             set { _LastName = value; }
         }
 
-        public string Name { get; set; }
+        //private readonly string _Name;
+        // public string Name { get {return _Name;} }
 
-        //private string _Name;
-        //public string Name
-        //{
-        //    get { return _Name; }
-        //    set { _Name = value; }
-        //}
-
-        public PersonClass(string firstname, string lastname) //Denna för att instatiera direkt när jag skapar ett nytt objekt.
+        private readonly string _Name;
+        public string Name
+        {
+            get { return _Name; }
+            
+        }
+        public string SetFullName(string firstname, string lastname)
         {
             FirstName = firstname;
             LastName = lastname;
+            return FirstName + " " + LastName; 
         }
 
-        public string FullName()
+        public PersonClass(string firstname, string lastname) //Denna för att instatiera direkt när jag skapar ett nytt objekt.
         {
-            Name = FirstName + " " + LastName;
-            return Name;
+            
+            _Name= SetFullName(firstname,lastname);
+            
         }
+
+        //public string FullName()
+        //{
+        //    _Name = FirstName + " " + LastName;
+        //    return _Name;
+        //}
 
     }
 }

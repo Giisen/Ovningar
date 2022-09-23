@@ -4,8 +4,26 @@
 // Instansiera 1000 bilar och spara i en array. Skriv sedan ut den sammanlagda längden av alla gröna bilar.
 
 
+
 using Övningar_29_30;
 
+Car[] cars=new Car[10];
+
+for (int i = 0; i <10; i++)
+{
+    cars[i] = new Car();
+    
+}
+
+int combinedLength = 0;
+
+foreach (var item in cars)
+{
+    if (item.Color==Car.ColorEnum.GrassGreen)
+    {
+        combinedLength++;
+    }
+}
 
 
 
