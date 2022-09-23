@@ -30,13 +30,13 @@ namespace Övningar_26_28
         //private readonly string _Name;
         // public string Name { get {return _Name;} }
 
-        private readonly string _Name;
+        private readonly string _Name; //Värdet på denna readonly kan bara sättas via en kontruktor
         public string Name
         {
             get { return _Name; }
             
         }
-        public string SetFullName(string firstname, string lastname)
+        public string SetFullName(string firstname, string lastname) // Hämtar värdena från kontruktorn och returnerar 
         {
             FirstName = firstname;
             LastName = lastname;
