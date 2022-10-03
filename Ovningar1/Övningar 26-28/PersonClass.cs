@@ -30,7 +30,7 @@ namespace Övningar_26_28
         //private readonly string _Name;
         // public string Name { get {return _Name;} }
 
-        private readonly string _Name; //Värdet på denna readonly kan bara sättas via en kontruktor
+        private readonly string _Name; //Värdet på denna readonly kan bara sättas via en kontruktor som i sin tur går via metoden SetFullName.
         public string Name
         {
             get { return _Name; }
@@ -49,12 +49,6 @@ namespace Övningar_26_28
             _Name= SetFullName(firstname,lastname);
             
         }
-
-        //public string FullName()
-        //{
-        //    _Name = FirstName + " " + LastName;
-        //    return _Name;
-        //}
 
     }
 }

@@ -583,7 +583,7 @@ for (int j = 0; j < h; j++)
 Car polestar = new Car("polestar", 100, "white");
 
 //polestar.Price = 100;
-
+Console.WriteLine(polestar.Price);
 polestar.HalfPrice();
 Console.WriteLine(polestar.Price);
 
