@@ -1,6 +1,7 @@
 ﻿
 
 using System;
+using System.Reflection.Metadata.Ecma335;
 using System.Threading.Channels;
 
 namespace Övningar_29_30;
@@ -39,23 +40,7 @@ public class Player
         set { _Y = value; }
     }
 
-    //private string _kast;
-
-    //public string Kast
-    //{
-    //    get { return _kast; }
-    //    set { _kast = value; }
-    //}
-
-    private RockPaperScissorsEnum _RndKast;
-
-    public RockPaperScissorsEnum RndKast
-    {
-        get { return _RndKast; }
-        set { _RndKast = RPSRand; }
-    }
-
-  
+ 
     //Skapar en Enum för sten, sax och påse.
     public enum RockPaperScissorsEnum
     {
@@ -64,73 +49,76 @@ public class Player
         Scissors,
     }
 
-    private RockPaperScissorsEnum var = new RockPaperScissorsEnum();
+    //private RockPaperScissorsEnum var = new RockPaperScissorsEnum();
 
     // Skapar en random från RockPaperScissorsEnum
-    static Array values2 = Enum.GetValues(typeof(RockPaperScissorsEnum));
-    static Random random2 = new Random();
-    public RockPaperScissorsEnum RPSRand = (RockPaperScissorsEnum)values2.GetValue(random2.Next(values2.Length));
-
+    public static Array values = Enum.GetValues(typeof(RockPaperScissorsEnum));
+    public static Random random = new Random();
+    public RockPaperScissorsEnum kast = (RockPaperScissorsEnum)values.GetValue(random.Next(values.Length));
     //Skapar en metod som skickar tillbaka (return) en randome sten, sax eller påse. Denna hämtar från random ovan
-    public RockPaperScissorsEnum KastEnum()
+
+    
+    public  RockPaperScissorsEnum KastEnum()
     {
-        return RPSRand;
+    
+        return kast;
     }
 
 
     // skapar en konstruktor som tvingar att man tar in namn och x,y, men som också lägger till en random sten sax påse från metoden ovan.
-    public Player(string name, int x, int y) //, RockPaperScissorsEnum kast)
+    public Player(string name, int x, int y) 
     {
         Name = name;
         X = x;
         Y = y;
         
+        
+
     }
 
-    public enum ResulatEnum
+
+    public void Print(int x, int y)
     {
-        Win,
-        Draw,
-        Loose,
+        Console.SetCursorPosition(x, y);
+        Console.WriteLine($"{Name} points {Points}\n\n");
     }
 
-   
 
+    //Skapar en Enum för win lose draw.
+    public enum WinOrLoseEnum
+    {
+        win,
+        lose,
+        draw,
+    }
 
+    public static string result = string.Empty;
 
-    public void  Resultat()
+    public static string WinOrLoseResult(RockPaperScissorsEnum kastEnum1, RockPaperScissorsEnum kastEnum2)
     {
         
-        if (RockPaperScissorsEnum.Rock && RockPaperScissorsEnum.Scissors)
+        if (kastEnum1 == RockPaperScissorsEnum.Rock && kastEnum2 == RockPaperScissorsEnum.Scissors
+            || kastEnum1 == RockPaperScissorsEnum.Scissors && kastEnum2 == RockPaperScissorsEnum.Paper
+            || kastEnum1 == RockPaperScissorsEnum.Paper && kastEnum2 == RockPaperScissorsEnum.Rock)
         {
-            //return ResulatEnum.Win;
-            return "Player 1 Wins!";
+            result = WinOrLoseEnum.win.ToString();
         }
-        else if (Kast1 == RockPaperScissorsEnum.Scissors && Kast2 == RockPaperScissorsEnum.Paper)
-
+        else if (kastEnum1 == RockPaperScissorsEnum.Rock && kastEnum2 == RockPaperScissorsEnum.Paper
+                 || kastEnum1 == RockPaperScissorsEnum.Scissors && kastEnum2 == RockPaperScissorsEnum.Rock
+                 || kastEnum1 == RockPaperScissorsEnum.Paper && kastEnum2 == RockPaperScissorsEnum.Scissors)
         {
-            return ResulatEnum.Win;
-            //return "Player 1 wins!";
-        }
-
-        else if (Kast1 == RockPaperScissorsEnum.Paper && Kast2 == RockPaperScissorsEnum.Rock)
-        {
-            return ResulatEnum.Win;
-            //return "Player 1 wins!";
-        }
-
-        else if (Kast1 == Kast2)
-        {
-            return ResulatEnum.Draw;
-            //return "It´s a Draw";
+            result = WinOrLoseEnum.lose.ToString();
         }
 
         else
         {
-            return ResulatEnum.Loose;
-            //return "Player 2 wins!";
+            result = WinOrLoseEnum.draw.ToString();
         }
-
+  
+        return result;
+        
+        
     }
+
 
 }

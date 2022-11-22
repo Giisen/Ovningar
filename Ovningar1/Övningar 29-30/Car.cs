@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
@@ -65,7 +66,35 @@ namespace Övningar_29_30
         };
 
 
+        
 
 
+        // För övning 32
+        public static void  CarArray(Car car, out Car silvercar)
+        {
+           
+            Car[] silvercar = new Car[10];
+           
+            for (int i = 0; i < 10; i++)
+            {
+                
+                car[i];
+
+            }
+
+            
+        }
+
+        
     }
 }
+
+
+/*  var distinktLista = CartList.Select(p => p.ProduktNamn).Distinct(); //Tar ut distinkta produktnamn.
+
+        stringKundvagn += ("\nProdukter:\n");
+        foreach (var prod in distinktLista)
+        {
+            var produkter = CartList.FirstOrDefault(p => p.ProduktNamn == prod);
+            antProd = CartList.Where(p => p.ProduktNamn == prod).Sum(p => p.Antal);
+*/

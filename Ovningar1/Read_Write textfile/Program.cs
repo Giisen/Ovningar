@@ -1,18 +1,20 @@
 ﻿using Read_Write_textfile;
 using System.IO;
+using System.Reflection.Metadata;
 
-
+var desktop = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+var file = Path.Combine(desktop, "Users.txt");
 
 List<Kunder> KundLista = new List<Kunder>();
 KundLista.Add(new Kunder("k","123"));
+KundLista.Add(new Kunder("L", "123456789"));
 KundLista.Add(new Kunder("Noel","hej"));
 KundLista.Add(new Kunder("Lisa","321"));
 KundLista.Add(new Kunder("Emil","ipad"));
 
 
 
-using
-(StreamWriter sw = new StreamWriter("C:\\Users\\krist\\Documents\\GitHub\\Lab2\\Users.txt"))
+using (StreamWriter sw = new StreamWriter(file,true))
 {
     foreach (var kund in KundLista)
     {
@@ -23,10 +25,10 @@ using
 
 
 
-using
+
 
 // Hänvisning till min textfil där användare och password är sparat
-    (StreamReader sr = new StreamReader("C:\\Users\\krist\\Documents\\GitHub\\Lab2\\Users.txt")) 
+using (StreamReader sr = new StreamReader(file))//new StreamReader("C:\\Users\\krist\\Documents\\GitHub\\Lab2\\Users.txt")) 
 {
     // Läser första raden
     string line = sr.ReadLine();
@@ -55,10 +57,6 @@ using
     //    line = sr.ReadLine();
     //}
 
-    
-
-
-    sr.Close();
 }
 //Stänger filen
 //sr.Close();
@@ -66,5 +64,7 @@ using
 
 Console.ReadKey();
 
-
-
+// Bra klasser att ha koll på.
+//File 
+//Environment
+//Path

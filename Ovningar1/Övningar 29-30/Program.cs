@@ -2,8 +2,12 @@
 // Varje bil ska kunna ha en färg som representeras av en enum (det ska finnas minst 5 olika färger på bilar), samt en längd.
 // När man instansierar en bil så ska den få en random färg, och en random längd (mellan 3 och 5 meter).
 // Instansiera 1000 bilar och spara i en array. Skriv sedan ut den sammanlagda längden av alla gröna bilar.
-/*
+
+// 32.Lägg till en statisk metod på klassen i uppgift 29. Metoden ska ta en bil som inparameter och returnera en array med 10 bilar i samma färg, men med olika längd.
+
+
 using Övningar_29_30;
+using static Övningar_29_30.Car;
 
 Car[] cars=new Car[1000];
 
@@ -20,14 +24,27 @@ foreach (var item in cars)
     if (item.Color==Car.ColorEnum.GrassGreen)
     {
         getLength = (int)item.Length;
-        //Console.WriteLine(item.Length);
-        //Console.WriteLine((int)item.Length);
         combinedLength += getLength;
     }
 }
 
+
+CarArray(new Car(),out Car silvercar);
+
+
+
+//var bla = Car.CarArray(new Car());
+
+//foreach (var i in bla)
+//{
+//    Console.WriteLine($"Min nya cararray {i.Color} {i.Length}");
+//}
+//Car.CarArray();
+
+
+
 Console.WriteLine($"Total längd på gröna bilar: {combinedLength}");
-*/
+
 
 //30 Gör en ny version av sten-sax-påse. Varje spelare ska representeras av ett “Player”-objekt.
 //Man ska kunna anropa en metod på objekten som returnerar en enum med ett(random) av tre värden (sten, sax, påse).
@@ -39,35 +56,47 @@ Console.WriteLine($"Total längd på gröna bilar: {combinedLength}");
 //som tar två enum (sten, sax, påse) och returnerar en ny enum (win, lose, draw) som säger om den första parametern man skickar in vinner över den andra (eller om det blir lika).
 //Hint: Använd Console.CursorLeft och Console.CursorTop. Spara den tidigare positionen innan du ändrar; gör uppdateringen, och hoppa tillbaks.
 
+/*
 using Övningar_29_30;
 using static Övningar_29_30.Player;
 
-Player player1 = new Player("Krister", 5, 5);
-Player player2 = new Player("Noel", 25, 25);
+Player player1 = new Player("Krister", 0, 5);
+Player computer = new Player("Computer", 25, 5);
 
+player1.Points=0;
+computer.Points=0;
 
+bool playagain = true;
 
-Console.WriteLine(player1.Name);
-Console.WriteLine(player1.Points);
-Console.WriteLine(player1.X);
-Console.WriteLine(player1.Y);
-Console.WriteLine(player1.KastEnum());
-RockPaperScissorsEnum kast1 = player1.KastEnum();
-
-Console.WriteLine(player2.Name);
-Console.WriteLine(player2.Points);
-Console.WriteLine(player2.X);
-Console.WriteLine(player2.Y);
-Console.WriteLine(player2.KastEnum());
-RockPaperScissorsEnum kast2 = player1.KastEnum();
-
-if (player1.KastEnum() != player2.KastEnum())
+while (playagain)
 {
-    Console.WriteLine("Ej lika");
-}
-else
-{
-    Console.WriteLine("lika");
-}
 
+    WinOrLoseResult(player1.KastEnum(), computer.KastEnum());
+    //Console.Clear();
+    Console.WriteLine($"You did: {player1.KastEnum()}");
+    Console.WriteLine($"Computer did: {computer.KastEnum()}\n");
+    
+    
+    Console.WriteLine($"You: {result}");
+    if (result == "win")
+    {
+        player1.Points ++;
+    }
+    else if (result == "lose")
+    {
+        computer.Points++;
+    }
 
+    
+
+    player1.Print(player1.X, player1.Y);
+    computer.Print(computer.X, computer.Y);
+
+    Console.WriteLine("Vill du spela igen? 'j' för ja 'n' för nej.");
+    string input = Console.ReadLine().ToLower();
+    if (input == "n")
+    {
+        playagain = false;
+    }
+}
+*/
